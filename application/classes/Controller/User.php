@@ -138,7 +138,7 @@ class Controller_User extends Controller_Base {
             ->rule('email', 'email')
             ->rule('price', 'numeric')
             ->rule('price', 'not_empty')
-            ->rule('campaign_name', 'not_empty')
+            ->rule('campaign_name', 'not_empty');
 
         // Validation check
         if (!$validation->check()) {
@@ -149,7 +149,7 @@ class Controller_User extends Controller_Base {
 
         // Create User
         $user = ORM::factory('User');
-		$user->username = $_POST['username'];
+		$user->username = $_POST['first_name'];
 		$user->email = $_POST['email'];
 		$user->password = $_POST['password'];
 

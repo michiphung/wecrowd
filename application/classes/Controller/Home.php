@@ -2,21 +2,10 @@
 
 class Controller_Home extends Controller_Base {
 
-    public function action_index() {
-        $this->template->content = View::factory('welcome/index');
-        $total = count(ORM::factory('campaign')->find_all());
-        $count = 0;
-        $table = array();
-        $id = 1;
+   public function action_index() {
 
-        while ($count < $total) {
-            $campaign = ORM::factory('campaign')->where('id', '=', $id)->find();
-            if (isset($campaign->name)) {
-                array_push($table, $campaign);
-                $count++;
-            }
-            $id++;
-        }
-        $this->template->table = $table;
+        $this->template->content = View::factory('welcome/index');
+        $this->template->table = ORM::factory('campaign')->find_all();
+        return;
     }
 }
