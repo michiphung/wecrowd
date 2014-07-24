@@ -16,6 +16,7 @@ class Controller_User extends Controller_Base {
 			}
 
 			$this->template->content->first_name = $campaign->first_name;
+			$this->template->content->last_name = $campaign->last_name;
 			$this->template->content->email = $campaign->email;
 			$this->template->content->campaign_name = $campaign->campaign_name;
 			$this->template->content->description = $campaign->description;
