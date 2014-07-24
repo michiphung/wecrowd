@@ -1,7 +1,7 @@
 
 <html>
 <head>
-	<h1><font size="6"><center>Welcome to FreshCooks Please manage your payment account. </center></font></h1>
+	<h1><font size="6"><center>Welcome to FreshCook Please manage your payment account. </center></font></h1>
 	<br>
 	<style>
 	</style>
