@@ -138,7 +138,7 @@ class Controller_User extends Controller_Base {
             ->rule('email', 'email')
             ->rule('price', 'numeric')
             ->rule('price', 'not_empty')
-            ->rule('campaign_name', 'not_empty');
+            ->rule('campaign_name', 'not_empty')
 
         // Validation check
         if (!$validation->check()) {
