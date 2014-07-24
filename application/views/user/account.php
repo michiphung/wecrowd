@@ -1,4 +1,4 @@
-<h1 class="floatLeft"><? echo $first_name. ' ' . $last_name; ?>'s Campaign</h1>
+<h1 class="floatLeft"><? echo $first_name?>'s Campaign</h1>
 
 <p> <? echo $wepay; ?></p>
 <p>
