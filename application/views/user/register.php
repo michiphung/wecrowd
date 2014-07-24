@@ -7,7 +7,7 @@
   </div>
 
    <div class="field">
-    <label for="campaign_name">First Name</label>
+    <label for="campaign_name">Last Name</label>
     <?php echo Form::input('last_name','',array('id' => 'last_name')) ?>
   </div>
 

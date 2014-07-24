@@ -149,7 +149,7 @@ class Controller_User extends Controller_Base {
 
         // Create User
         $user = ORM::factory('User');
-		$user->username = $_POST['username'];
+		$user->username = $_POST['first_name'];
 		$user->email = $_POST['email'];
 		$user->password = $_POST['password'];
 
