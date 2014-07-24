@@ -15,7 +15,7 @@ class Controller_User extends Controller_Base {
 				$this->template->content->token = true;
 			}
 
-			$this->template->content->name = $campaign->campaign_name;
+			$this->template->content->name = $campaign->name;
 			$this->template->content->email = $campaign->email;
 			$this->template->content->campaign_name = $campaign->campaign_name;
 			$this->template->content->description = $campaign->description;
@@ -149,7 +149,7 @@ class Controller_User extends Controller_Base {
 
         // Create User
         $user = ORM::factory('User');
-		$user->username = $_POST['first_name'];
+		$user->username = $_POST['username'];
 		$user->email = $_POST['email'];
 		$user->password = $_POST['password'];
 
