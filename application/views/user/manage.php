@@ -1,7 +1,7 @@
 
 <html>
 <head>
-	<h1><font size="6"><center>Welcome to WeCrowds. Please manage your funds. </center></font></h1>
+	<h1><font size="6"><center>Welcome to WeCrowd. Please manage your funds. </center></font></h1>
 	<br>
 	<style>
 	</style>
