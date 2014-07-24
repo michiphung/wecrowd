@@ -1,14 +1,14 @@
 
 <html>
 <head>
-	<h1><font size="6"><center>Welcome to WeCrowd Please manage your payment account. </center></font></h1>
+	<h1><font size="6"><center>Welcome to WeCrowd. Please manage your funds. </center></font></h1>
 	<br>
 	<style>
 	</style>
 </head>	
         <body>
         	<center>
-        	<a href="<?=$wepay_link?>">View your payments account</a>
+        	<a href="<?=$wepay_link?>">View your funds</a>
         	<div id="kyc_div"><div>
 				<script type="text/javascript" src="https://www.wepay.com/min/js/iframe.wepay.js">
 				</script>

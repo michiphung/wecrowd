@@ -1,9 +1,9 @@
-<h1>Editing Chef</h1>
+<h1>Editing User</h1>
 <?php echo Form::open('user/update') ?>
 
  <p>
     <b>Name:</b>
-    <? echo $name; ?>
+    <? echo $first_name. ' ' . $last_name; ?>
   </p>
 
 <p>
@@ -12,19 +12,19 @@
 </p>
 
   <div class="field">
-    <label for="chef_kitchen">Kitchen</label>
-    <?php echo form::input('kitchen',$kitchen,array('id' => 'kitchen')) ?>
+    <label for="campaign_campaign_name">Campaign</label>
+    <?php echo form::input('campaign_name',$campaign_name,array('id' => 'campaign_name')) ?>
   </div>
   <div class="field">
-    <label for="chef_food">Food</label>
-    <?php echo form::input('food',$food,array('id' => 'food')) ?>
+    <label for="campaign_description">Description</label>
+    <?php echo form::input('description',$description,array('id' => 'description')) ?>
   </div>
   <div class="field">
-    <label for="chef_price">Price</label>
+    <label for="campaign_price">Donation Price</label>
     <?php echo form::input('price',$price,array('id' => 'price')) ?>
   </div>
   <div class="actions">
-    <?php echo form::submit('submit','Update Chef') ?>
+    <?php echo form::submit('submit','Update WeCrowd Account') ?>
   </div>
 </form>
 

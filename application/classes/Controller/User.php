@@ -5,9 +5,9 @@ class Controller_User extends Controller_Base {
 	public function action_index() {
 		if (Auth::instance()->logged_in()){
 			$user = Auth::instance()->get_user();
-			$chef = ORM::factory('chef')->where('email', '=', $user->email)->find();
+			$campaign = ORM::factory('campaign')->where('email', '=', $user->email)->find();
 			$this->template->content = View::factory('user/account');
-			if (!($chef->hasAccessToken())) {
+			if (!($campaign->hasAccessToken())) {
 				$this->template->content->wepay = "<b>Please confirm your account to manage your money: <p><a class='wepay-widget-button wepay-blue' href=" . URL::base() . "wepayapi>Click here to receive confirmation email!</a>";
 				$this->template->content->token = false;
 			} else {
@@ -15,11 +15,11 @@ class Controller_User extends Controller_Base {
 				$this->template->content->token = true;
 			}
 
-			$this->template->content->name = $chef->name;
-			$this->template->content->email = $chef->email;
-			$this->template->content->kitchen = $chef->kitchen;
-			$this->template->content->food = $chef->food;
-			$this->template->content->price = number_format($chef->price,2);
+			$this->template->content->name = $campaign->name;
+			$this->template->content->email = $campaign->email;
+			$this->template->content->campaign_name = $campaign->campaign_name;
+			$this->template->content->description = $campaign->description;
+			$this->template->content->price = number_format($campaign->price,2);
 			$this->template->content->edit = true;
 		}
 		else {
@@ -34,27 +34,27 @@ class Controller_User extends Controller_Base {
 		if (!isset($id)) {
 			HTTP::redirect('/');
 		}
-		$chef = ORM::factory('chef')->where('id', '=', $id)->find();
+		$campaign = ORM::factory('campaign')->where('id', '=', $id)->find();
 		$this->template->content = View::factory('user/account');
 		if (Auth::instance()->logged_in()) {
 			$user = Auth::instance()->get_user();
-			if ($chef->email == $user->email) {
+			if ($campaign->email == $user->email) {
 				$this->template->content->edit = true;
 			}
 			else {
 				$this->template->content->edit = false;
 			}
 
-			if ($chef->hasAccessToken()) {
+			if ($campaign->hasAccessToken()) {
 				$this->template->content->token = true;
 			}
 
-			if (!($chef->hasAccessToken())) {
+			if (!($campaign->hasAccessToken())) {
 				$this->template->content->wepay = "<b>Please confirm account to manage your money: <p><a class='wepay-widget-button wepay-blue' href=" . URL::base() . "wepayapi>Click here to create your WeCrowd account</a>";
 				$this->template->content->token = false;
 			}
-			else if (!($this->template->content->edit) && $chef->hasAccountId()) {
-				$this->template->content->wepay = "<a href=" . URL::base() . "user/create_credit_card/".$id." class='btn btn-danger btn-large' id='buy-now-button'>Buy ".$chef->food." Now!</a>";
+			else if (!($this->template->content->edit) && $campaign->hasAccountId()) {
+				$this->template->content->wepay = "<a href=" . URL::base() . "user/create_credit_card/".$id." class='btn btn-danger btn-large' id='buy-now-button'>Donate to ".$campaign->campaign_name." Now!</a>";
 
 			}
 			else {
@@ -63,17 +63,18 @@ class Controller_User extends Controller_Base {
 		}
 		else {
 			$this->template->content->wepay = '';
-			if ($chef->hasAccountId()) {
-				$this->template->content->wepay = "<a href=". URL::base() . "user/create_credit_card/".$id." class='btn btn-danger btn-large' id='buy-now-button'>Buy ".$chef->food." Now!</a>";
+			if ($campaign->hasAccountId()) {
+				$this->template->content->wepay = "<a href=". URL::base() . "user/create_credit_card/".$id." class='btn btn-danger btn-large' id='buy-now-button'>Buy ".$campaign->campaign_name." Now!</a>";
 			}
 			$this->template->content->token = true;
 			$this->template->content->edit = false;
 		}
-		$this->template->content->name = $chef->name;
-		$this->template->content->email = $chef->email;
-		$this->template->content->kitchen = $chef->kitchen;
-		$this->template->content->food = $chef->food;
-		$this->template->content->price = number_format($chef->price,2);
+		$this->template->content->first_name = $campaign->first_name;
+		$this->template->content->last_name = $campaign->last_name;		
+		$this->template->content->email = $campaign->email;
+		$this->template->content->description = $campaign->description;
+		$this->template->content->campaign_name = $campaign->campaign_name;
+		$this->template->content->price = number_format($campaign->price,2);
 		$this->template->content->base = URL::base($this->request);
 	}
 
@@ -85,10 +86,10 @@ class Controller_User extends Controller_Base {
 
 		$credit_card_id = $_POST['credit_card_id'];
 		$id = $_POST['account_id'];		
-       	$chef = ORM::factory('chef')->where('id', '=', $id)->find();
+       	$campaign = ORM::factory('campaign')->where('id', '=', $id)->find();
 
 		try {
-            Controller_Wepayapi::create_checkout($credit_card_id, $chef);
+            Controller_Wepayapi::create_checkout($credit_card_id, $campaign);
         } catch (WePayPermissionException $e) {
             $this->template->content = "There was an error: " . $e->getMessage();
             return;
@@ -97,14 +98,14 @@ class Controller_User extends Controller_Base {
 
     public function action_payment_success() { 
     	$id = $_GET['account_id'];
-    	$chef = ORM::factory('chef')->where('id', '=', $id)->find();
+    	$campaign = ORM::factory('campaign')->where('id', '=', $id)->find();
 
         $this->template->content = View::factory('user/charge_cc');
-		$this->template->content->name = $chef->name;
-		$this->template->content->email = $chef->email;
-		$this->template->content->kitchen = $chef->kitchen;
-		$this->template->content->food = $chef->food;
-		$this->template->content->price = number_format($chef->price,2);
+		$this->template->content->name = $campaign->name;
+		$this->template->content->email = $campaign->email;
+		$this->template->content->description = $campaign->description;
+		$this->template->content->campaign_name = $campaign->campaign_name;
+		$this->template->content->price = number_format($campaign->price,2);
 	}
 
 
@@ -114,30 +115,30 @@ class Controller_User extends Controller_Base {
 
 	public function action_manage() {
 		$user = Auth::instance()->get_user();
-        $chef = ORM::factory('chef')->where('email', '=', $user->email)->find();
+        $campaign = ORM::factory('campaign')->where('email', '=', $user->email)->find();
         try  {
-        	$manage_uri = Controller_Wepayapi::create_manage($chef->wepay_account_id);
+        	$manage_uri = Controller_Wepayapi::create_manage($campaign->wepay_account_id);
         } catch (WePayPermissionException $e) {
         	$this->template->content = "There was an error" . $e->getMessage();
         	return;
         }
         $this->template->content = View::factory('user/manage');
         $this->template->content->manage_uri = $manage_uri;
-        $this->template->content->wepay_link = 'https://stage.wepay.com/account/' . $chef->wepay_account_id;
+        $this->template->content->wepay_link = 'https://stage.wepay.com/account/' . $campaign->wepay_account_id;
      } 
 
 	public function action_complete_registration() {
 
         $validation = Validation::factory($this->request->post())
-            ->rule('username', 'not_empty')
+            ->rule('first_name', 'not_empty')
+            ->rule('last_name', 'not_empty')
             ->rule('password', 'not_empty')
             ->rule('password', 'min_length', array(':value', 6))
             ->rule('email', 'not_empty')
             ->rule('email', 'email')
             ->rule('price', 'numeric')
             ->rule('price', 'not_empty')
-            ->rule('kitchen', 'not_empty')
-            ->rule('food', 'not_empty');
+            ->rule('campaign_name', 'not_empty')
 
         // Validation check
         if (!$validation->check()) {
@@ -159,22 +160,23 @@ class Controller_User extends Controller_Base {
             return;
         }
 
-        // Create Chef
-		$chef = ORM::factory('chef');
-		$chef->name = $_POST['username'];
-		$chef->email = $_POST['email'];
-		$chef->kitchen = $_POST['kitchen'];
-		$chef->food = $_POST['food'];
-		$chef->price = $_POST['price'];
-		$chef->account_type = $_POST['account_type'];
+        // Create Campaign
+		$campaign = ORM::factory('campaign');
+		$campaign->first_name = $_POST['first_name'];
+		$campaign->last_name = $_POST['last_name'];
+		$campaign->email = $_POST['email'];
+		$campaign->campaign_name = $_POST['campaign_name'];
+		$campaign->description = $_POST['description'];
+		$campaign->price = $_POST['price'];
+		$campaign->account_type = $_POST['account_type'];
 
         // Add login role
         $user->add('roles', ORM::factory('Role', array('name' => 'login')));
 
         try {
-            $chef->save();
+            $campaign->save();
         } catch (ORM_Validation_Exception $e) {
-            $this->template->content = "There was a problem creating your chef: " . var_dump($e->errors());
+            $this->template->content = "There was a problem creating your campaign: " . var_dump($e->errors());
         }
 
 		$success = Auth::instance()->login($_POST['email'], $_POST['password']);
@@ -231,13 +233,14 @@ class Controller_User extends Controller_Base {
 	public function action_edit(){
 		if (Auth::instance()->logged_in()){
 			$user = Auth::instance()->get_user();
-			$chef = ORM::factory('chef')->where('email', '=', $user->email)->find();
+			$campaign = ORM::factory('campaign')->where('email', '=', $user->email)->find();
 			$this->template->content = View::factory('user/edit');
-			$this->template->content->name = $chef->name;
-			$this->template->content->email = $chef->email;
-			$this->template->content->kitchen = $chef->kitchen;
-			$this->template->content->food = $chef->food;
-			$this->template->content->price = $chef->price;
+			$this->template->content->name = $campaign->first_name;
+			$this->template->content->name = $campaign->last_name;
+			$this->template->content->email = $campaign->email;
+			$this->template->content->description = $campaign->description;
+			$this->template->content->campaign_name = $campaign->campaign_name;
+			$this->template->content->price = $campaign->price;
 		}
 		else{
 			$this->template->content = "Error, you're not logged in!";
@@ -248,10 +251,10 @@ class Controller_User extends Controller_Base {
 		if (Auth::instance()->logged_in()){
 			$this->template->content = "Delete? Really?";
 			$user = Auth::instance()->get_user();
-			$chef = ORM::factory('chef')->where('email', '=', $user->email)->find();
+			$campaign = ORM::factory('campaign')->where('email', '=', $user->email)->find();
 
 		    Auth::instance()->logout();
-            $chef->delete();
+            $campaign->delete();
             $user->delete();
 		    HTTP::redirect('/');	
 		}
@@ -270,18 +273,18 @@ class Controller_User extends Controller_Base {
             ->rule('price', 'numeric')
             ->rule('price', 'not_empty')
             ->rule('kitchen', 'not_empty')
-            ->rule('food', 'not_empty');
+            ->rule('campaign_name', 'not_empty');
 		} catch (Validation_Exception $e) {
 			$this->template->content = "Your registration was not valid: ".$e->errors();
 		}
 
 		if (Auth::instance()->logged_in()){
 			$user = Auth::instance()->get_user();
-			$chef = ORM::factory('chef')->where('email', '=', $user->email)->find();
-			$chef->food = $_POST['food'];
-			$chef->kitchen = $_POST['kitchen'];
-			$chef->price = $_POST['price'];
-			$chef->save();
+			$campaign = ORM::factory('campaign')->where('email', '=', $user->email)->find();
+			$campaign->campaign_name = $_POST['campaign_name'];
+			$campaign->kitchen = $_POST['kitchen'];
+			$campaign->price = $_POST['price'];
+			$campaign->save();
 
 			HTTP::redirect('user');
 		}

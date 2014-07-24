@@ -48,15 +48,16 @@ ALTER TABLE `roles_users`
 ALTER TABLE `user_tokens`
   ADD CONSTRAINT `user_tokens_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
-CREATE TABLE `chefs` (
+CREATE TABLE `campaign` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` text NOT NULL,
+  `first_name` text NOT NULL,
+  `last_name` text NOT NULL,
   `email` text NOT NULL,
-  `food` text,
+  `campaign_name` text,
+  `description` text,
   `price` int(11) DEFAULT NULL,
   `wepay_access_token` text,
   `wepay_account_id` bigint(20) DEFAULT NULL,
-  `kitchen` text,
   `account_type` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;

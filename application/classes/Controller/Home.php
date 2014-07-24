@@ -4,15 +4,15 @@ class Controller_Home extends Controller_Base {
 
     public function action_index() {
         $this->template->content = View::factory('welcome/index');
-        $total = count(ORM::factory('chef')->find_all());
+        $total = count(ORM::factory('campaign')->find_all());
         $count = 0;
         $table = array();
         $id = 1;
 
         while ($count < $total) {
-            $chef = ORM::factory('chef')->where('id', '=', $id)->find();
-            if (isset($chef->name)) {
-                array_push($table, $chef);
+            $campaign = ORM::factory('campaign')->where('id', '=', $id)->find();
+            if (isset($campaign->name)) {
+                array_push($table, $campaign);
                 $count++;
             }
             $id++;

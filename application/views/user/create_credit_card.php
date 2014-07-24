@@ -1,4 +1,4 @@
-<h1> Thank you for registering! To proceed, please enter your credit card information </h1>
+<h1> Please enter your credit card information </h1>
 <script type="text/javascript" src="https://static.wepay.com/min/js/tokenization.v2.js">
 </script>
 

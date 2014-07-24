@@ -4,15 +4,15 @@
  * Model that represents a farmer in WeFarm
  *
  */
-class Model_chef extends ORM {
+class Model_campaign extends ORM {
 
     public function createAccount($access_token) {
         $wepay = new WePay($access_token);
 
         try {
             $response = $wepay->request('account/create/', array(
-                    'name'          => $this->name,
-                    'description'   => $this->name."'s WeCrowd account",
+                    'name'          => $this->first_name,
+                    'description'   => $this->first_name."'s WeCrowd account",
                     'country'       => "US",
                     'currencies'    => array("USD"),
                     'type'          => $this->account_type 

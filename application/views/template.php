@@ -9,20 +9,20 @@
 <div class="container">
     <? echo $content ?>
     <?  if (!empty($table)){
-            echo "<h3>Our chefs</h3>
+            echo "<h3>Funding Campaigns</h3>
             <table class='table table-striped table-bordered'>
                 <tr>
-                <th>Chef</th>    
-                <th>Kitchen</th>
-                <th>Food</th>
-                <th>Price</th>
+                <th>Name</th>    
+                <th>Campaign</th>
+                <th>Description</th>
+                <th>Donation</th>
             </tr>";
-            foreach ($table as $chef){
+            foreach ($table as $campaign){
                 echo '<tr>';
-                echo '<td><a href='.'user/account/'.$chef->id.'>'.$chef->name.'</td>';
-                echo '<td><a href='.'user/account/'.$chef->id.'>'.$chef->kitchen.'</td>';
-                echo '<td>'.$chef->food.'</td>';
-                echo '<td>$'.number_format($chef->price,2).'</td>';
+                echo '<td><a href='.'user/account/'.$campaign->id.'>'.$campaign->first_name.'</td>';
+                echo '<td><a href='.'user/account/'.$campaign->id.'>'.$campaign->campaign_name.'</td>';
+                echo '<td>'.$campaign->description.'</td>';
+                echo '<td>$'.number_format($campaign->price,2).'</td>';
             }
 
             echo '</table>';

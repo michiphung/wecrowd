@@ -1,9 +1,9 @@
-<h1 class="floatLeft"><? echo $name; ?>'s Kitchen</h1>
+<h1 class="floatLeft"><? echo $first_name. ' ' . $last_name; ?>'s Campaign</h1>
 
 <p> <? echo $wepay; ?></p>
 <p>
 <b>Name:</b>
-<? echo $name; ?>
+<? echo $first_name. ' ' . $last_name; ?>
 </p>
 <p>
 <b>Email:</b>
@@ -11,18 +11,18 @@
 </p>
 
 <p>
-<b>Kitchen:</b>
-<? echo $kitchen; ?>
+<b>Campaign:</b>
+<? echo $campaign_name; ?>
 </p>
 
 <p>
-<b>Food:</b>
-<? echo $food; ?>
+<b>Description:</b>
+<? echo $description; ?>
 
 </p>
 
 <p>
-<b>Price:</b>
+<b>Donation:</b>
 <? echo '$'.$price; ?>
 </p>
 <p><p>
