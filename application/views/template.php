@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FreshCook</title>
+    <title>WeCrowd</title>
     <?php echo HTML::style("content/css/bootstrap.css"); ?>
     <?php echo HTML::style("content/css/bootstrap-responsive.css"); ?>
 </head>

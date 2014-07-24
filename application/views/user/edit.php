@@ -28,4 +28,4 @@
   </div>
 </form>
 
-<a href="/freshcook/">Back</a>
+<a href="/">Back</a>

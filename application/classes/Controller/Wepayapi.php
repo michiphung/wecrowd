@@ -33,7 +33,7 @@ class Controller_Wepayapi extends Controller_Base {
                 $resend_email = new WePay($chef->getAccessToken());    
                 $resend_email->request('user/resend_confirmation/', array());
                 } else {
-                    $this->template->content = "FreshCook Account Failed! <a href=\"" . URL::base() . "\">Back</a>";
+                    $this->template->content = "WeCrowd Account Failed! <a href=\"" . URL::base() . "\">Back</a>";
                 }
             } else {
             $this->template->content = "Not Logged In";

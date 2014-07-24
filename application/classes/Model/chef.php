@@ -12,7 +12,7 @@ class Model_chef extends ORM {
         try {
             $response = $wepay->request('account/create/', array(
                     'name'          => $this->name,
-                    'description'   => $this->name."'s FreshCook account",
+                    'description'   => $this->name."'s WeCrowd account",
                     'country'       => "US",
                     'currencies'    => array("USD"),
                     'type'          => $this->account_type 

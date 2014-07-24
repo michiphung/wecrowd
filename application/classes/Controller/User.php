@@ -50,7 +50,7 @@ class Controller_User extends Controller_Base {
 			}
 
 			if (!($chef->hasAccessToken())) {
-				$this->template->content->wepay = "<b>Please confirm account to manage your money: <p><a class='wepay-widget-button wepay-blue' href=" . URL::base() . "wepayapi>Click here to create your FreshCook account</a>";
+				$this->template->content->wepay = "<b>Please confirm account to manage your money: <p><a class='wepay-widget-button wepay-blue' href=" . URL::base() . "wepayapi>Click here to create your WeCrowd account</a>";
 				$this->template->content->token = false;
 			}
 			else if (!($this->template->content->edit) && $chef->hasAccountId()) {

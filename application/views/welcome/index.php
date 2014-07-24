@@ -1,2 +1,2 @@
-  <h1>Welcome to FreshCook</h1>
-    <p>You can buy a lots of fresh and gourmet food sold here. If you are a chef and want to sell your food, please register.</p>
+  <h1>Welcome to WeCrowd</h1>
+    <p>You can browse different fundraising campaign. If you want to start your own campaign, please register.</p>

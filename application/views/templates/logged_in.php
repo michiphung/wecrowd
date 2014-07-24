@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="/freshcook/">FreshCook</a>
+          <a class="brand" href="/">WeCrowd</a>
           <div class="nav-collapse collapse">
             <ul class="nav pull-right">
               <li><a href="<? echo url::base().'user/logout' ?>">Logout</a></li>
