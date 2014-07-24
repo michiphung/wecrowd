@@ -2,7 +2,7 @@
 <?php echo Form::open('user/complete_registration') ?>
 
   <div class="field">
-    <label for="fundraiser_first_name">First Name</label>
+    <label for="campaign_first_name">First Name</label>
     <?php echo Form::input('first_name','',array('id' => 'first_name')) ?>
   </div>
 
