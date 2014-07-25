@@ -13,7 +13,7 @@
 				<script type="text/javascript" src="https://www.wepay.com/min/js/iframe.wepay.js">
 				</script>
 
-			    <iframe src="<?=$manage_uri?>" width="800" height="550" border="5" frameborder="1"></iframe>
+			    <iframe src="<?=$manage_uri?>" width="800" height="550"></iframe>
 			</center>
 
 
