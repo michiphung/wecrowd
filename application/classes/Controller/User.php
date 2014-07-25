@@ -102,7 +102,7 @@ class Controller_User extends Controller_Base {
     	$campaign = ORM::factory('campaign')->where('id', '=', $id)->find();
 
         $this->template->content = View::factory('user/charge_cc');
-		$this->template->content->name = $campaign->name;
+		$this->template->content->name = $campaign->first_name;
 		$this->template->content->email = $campaign->email;
 		$this->template->content->description = $campaign->description;
 		$this->template->content->campaign_name = $campaign->campaign_name;
