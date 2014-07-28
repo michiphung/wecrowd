@@ -228,8 +228,8 @@ body {
   color: #333333;
   background-color: #ffffff;
   @font-face{
-    font-family: 'OpenSans';
-    src: url('/content/font/Open_Sans/OpenSans-Regular.ttf');
+    font-family: OpenSans;
+    src: url(/content/font/Open_Sans/OpenSans-Regular.ttf);
   }
 }
 
