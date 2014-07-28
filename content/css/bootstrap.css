@@ -226,6 +226,18 @@ textarea {
     src: url('/content/font/Open_Sans/OpenSans-Regular.ttf');
   }
 
+@font-face{
+    font-family: 'OpenSans';
+    src: url('/content/font/Open_Sans/OpenSans-Light.ttf');
+    font-weight: bold;
+  }
+
+@font-face{
+    font-family: 'OpenSans';
+    src: url('/content/font/Open_Sans/OpenSans-Bold.ttf');
+    font-weight: lighter;
+  }
+
 body {
   margin: 0;
   font-size: 14px;
@@ -770,6 +782,7 @@ h3 {
 
 h1 {
   font-size: 38.5px;
+  color: #ee5e26;
 }
 
 h2 {
@@ -4787,10 +4800,6 @@ input[type="submit"].btn.btn-mini {
 .navbar-inverse .nav > li > a {
   color: #999999;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  @font-face {
-  font-family: 'OpenSans';
-  src: url('/content/font/Open_Sans/OpenSans-Regular.ttf'); 
-  }
 }
 
 .navbar-inverse .brand:hover,
