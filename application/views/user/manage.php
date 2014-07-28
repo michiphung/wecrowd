@@ -5,12 +5,12 @@
 	<br>
 	<h1><font size="6"><center>Welcome to WeCrowd. <br> Please manage your funds. </center></font></h1>
 	<br>
-	<br>
 	<hr  align = "center" width="10%" color = #ee5e26 size =10>
 	<style>
 	</style>
 </head>	
         <body>
+        	<br>
         	<br>
         	<br>
         	<center> View your 
