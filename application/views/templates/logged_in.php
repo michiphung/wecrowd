@@ -10,7 +10,14 @@
           <div class="nav-collapse collapse">
             <ul class="nav pull-right">
               <li><a href="<? echo url::base().'user/logout' ?>">LOGOUT</a></li>
-              <li><a href="<? echo url:: base().'user/manage' ?>"> MANAGE </a><li>
+              <li><a href="<? echo url:: base().'user/manage' ?>"
+                style = "border-style: solid;
+                           border-left: 0;
+                           border-top: 0;
+                           border-bottom: 0;
+                           border-width: 2px;
+                           border-right-color: #DADADA
+                "> MANAGE </a><li>
             </ul>
           </div>
         </div>
