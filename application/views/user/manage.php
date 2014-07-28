@@ -6,7 +6,7 @@
 	<h1><font size="6"><center>Welcome to WeCrowd. <br> Please manage your funds. </center></font></h1>
 	<br>
 	<br>
-	<hr width="10%" color = #ee5e26 align = "center" size =10>
+	<hr  align = "center" width="10%" color = #ee5e26 size =10>
 	<style>
 	</style>
 </head>	
