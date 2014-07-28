@@ -6,11 +6,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="/">WeCrowd</a>
+          <a class="brand" href="/"><img src="http://www.wecrowd.wepay-inc.com/content/img/wecrowd_logo_small.png"></a>
           <div class="nav-collapse collapse">
             <ul class="nav pull-right">
-              <li><a href="<? echo url::base().'user/logout' ?>">Logout</a></li>
-              <li><a href="<? echo url:: base().'user/manage' ?>"> Manage </a><li>
+              <li><a href="<? echo url::base().'user/logout' ?>">LOGOUT</a></li>
+              <li><a href="<? echo url:: base().'user/manage' ?>"> MANAGE </a><li>
             </ul>
           </div>
         </div>
