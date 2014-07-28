@@ -90,12 +90,14 @@ class Controller_User extends Controller_Base {
        	$campaign = ORM::factory('campaign')->where('id', '=', $id)->find();
 
 		try {
-			echo "CREATING CHECKOUT";
             Controller_Wepayapi::create_checkout($credit_card_id, $campaign);
         } catch (WePayPermissionException $e) {
             $this->template->content = "There was an error: " . $e->getMessage();
             return;
         }
+
+        HTTP::redirect('/user/payment_sucess?account_id=' . $id);
+
     }
 
     public function action_payment_success() { 
