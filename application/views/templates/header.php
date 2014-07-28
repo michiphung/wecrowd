@@ -13,7 +13,8 @@
                   style = "border-style: solid;
                            border-left: 0;
                            border-top: 0;
-                           border-bottom: 0; 
+                           border-bottom: 0;
+                           border-right-color: #DADADA; 
                 ">REGISTER</a></li>
               <li><a href="<? echo url::base().'user/login' ?>">LOGIN</a></li>
             </ul>
