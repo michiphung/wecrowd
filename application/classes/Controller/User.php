@@ -96,7 +96,13 @@ class Controller_User extends Controller_Base {
             return;
         }
 
-        $this->redirect('/user/payment_success?account_id=' . $id);
+        $this->template->content = View::factory('user/charge_cc');
+        $this->template->content->name = $campaign->first_name;
+		$this->template->content->email = $campaign->email;
+		$this->template->content->description = $campaign->description;
+		$this->template->content->campaign_name = $campaign->campaign_name;
+		$this->template->content->price = number_format($campaign->price,2);
+
 
     }
 
