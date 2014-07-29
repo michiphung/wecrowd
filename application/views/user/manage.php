@@ -13,9 +13,7 @@
         	<br>
         	<br>
         	<br>
-        	<center> View Your 
-        	<a href="<?=$wepay_link?>">payment account.</a>
-        	<hr>
+        	<center>
         	<div id="kyc_div"><div>
 				<script type="text/javascript" src="https://www.wepay.com/min/js/iframe.wepay.js">
 				</script>
