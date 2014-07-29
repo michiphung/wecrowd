@@ -1,2 +1,2 @@
-<h1>Sucessfully donated <? echo $price ?> to <? echo $campaign_name ?>!</h1>
+<h1>Sucessfully donated!</h1>
 <br />
