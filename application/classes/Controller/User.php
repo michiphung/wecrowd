@@ -96,7 +96,7 @@ class Controller_User extends Controller_Base {
             return;
         }
 
-        HTTP::redirect('/user/payment_success');
+        HTTP::redirect('user');
 
 
     }
