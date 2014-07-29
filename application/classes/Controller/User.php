@@ -22,6 +22,7 @@ class Controller_User extends Controller_Base {
 			$this->template->content->description = $campaign->description;
 			$this->template->content->price = number_format($campaign->price,2);
 			$this->template->content->edit = true;
+			$this->template->content->wepay = 'https://stage.wepay.com/account/' . $campaign->wepay_account_id;
 		}
 		else {
 			$this->template->content = View::factory('welcome/index');
@@ -65,7 +66,7 @@ class Controller_User extends Controller_Base {
 		else {
 			$this->template->content->wepay = '';
 			if ($campaign->hasAccountId()) {
-				$this->template->content->wepay = "<a href=". URL::base() . "user/create_credit_card/".$id." class='btn btn-danger btn-large' id='buy-now-button'>Buy ".$campaign->campaign_name." Now!</a>";
+				$this->template->content->wepay = "<a href=". URL::base() . "user/create_credit_card/".$id." class='btn btn-danger btn-large' id='buy-now-button'>Donate to ".$campaign->campaign_name." Now!</a>";
 			}
 			$this->template->content->token = true;
 			$this->template->content->edit = false;
@@ -77,7 +78,7 @@ class Controller_User extends Controller_Base {
 		$this->template->content->campaign_name = $campaign->campaign_name;
 		$this->template->content->price = number_format($campaign->price,2);
 		$this->template->content->base = URL::base($this->request);
-		$this->template->content->wepay_link = 'https://stage.wepay.com/account/' . $campaign->wepay_account_id;
+		$this->template->content->wepay = 'https://stage.wepay.com/account/' . $campaign->wepay_account_id;
 	}
 
 	public function action_create_credit_card(){
