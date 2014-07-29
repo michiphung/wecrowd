@@ -96,7 +96,7 @@ class Controller_User extends Controller_Base {
             return;
         }
 
-        Request::instance()->redirect('/user?account_id=' . $id);
+        Request::instance()->redirect('/user/payment_success?account_id=' . $id);
 
 
     }
