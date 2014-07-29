@@ -29,9 +29,8 @@
 <? if ($edit) {
     echo "<a id=\"edit\" href=" . URL::base() . 'user/edit>Edit</a><p>';
     echo "<a id=\"delete\" href=" . URL::base() . 'user/delete>Delete</a>';
-
-}
-?>
+}?>
+    <a href="<?=$wepay_link?>">Payment account</a>
 
 
 <? if (!empty($notice)) { ?>
