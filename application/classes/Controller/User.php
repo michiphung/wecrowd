@@ -96,9 +96,12 @@ class Controller_User extends Controller_Base {
             return;
         }
 
-        http_redirect("/user/payment_success", array("account_id" => $id));
-
-
+        try {
+        	http_redirect("/user/payment_success", array("account_id" => $id));
+        } catch (WePayPermissionException $e) {
+            $this->template->content = "There was an error: " . $e->getMessage();
+            return;
+        }
     }
 
     public function action_payment_success() { 
