@@ -65,8 +65,7 @@ class Controller_Wepayapi extends Controller_Base {
                     'type'                => 'goods',
                     'amount'              => $merchant->price,
                     'payment_method_id'   => $credit_card_id,
-                    'payment_method_type' => 'credit_card',
-                    'redirect_uri'        => $base_url.'user/payment_success?account_id=' . $merchant->id
+                    'payment_method_type' => 'credit_card'
                     ));
     }
 }

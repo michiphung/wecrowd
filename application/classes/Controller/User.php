@@ -96,6 +96,8 @@ class Controller_User extends Controller_Base {
             return;
         }
 
+        $this->request->redirect('/user/payment_success&account_id=' . $id);
+
     }
 
     public function action_payment_success() { 
