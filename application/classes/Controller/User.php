@@ -96,21 +96,21 @@ class Controller_User extends Controller_Base {
             return;
         }
 
-        HTTP::redirect('user');
+        Request::instance()->redirect('/user?account_id=' . $id);
 
 
     }
 
     public function action_payment_success() { 
-    	//$id = $_GET['account_id'];
-    	//$campaign = ORM::factory('campaign')->where('id', '=', $id)->find();
+    	$id = $_GET['account_id'];
+    	$campaign = ORM::factory('campaign')->where('id', '=', $id)->find();
 
         $this->template->content = View::factory('user/charge_cc');
-		// $this->template->content->name = $campaign->first_name;
-		// $this->template->content->email = $campaign->email;
-		// $this->template->content->description = $campaign->description;
-		// $this->template->content->campaign_name = $campaign->campaign_name;
-		// $this->template->content->price = number_format($campaign->price,2);
+		$this->template->content->name = $campaign->first_name;
+		$this->template->content->email = $campaign->email;
+		$this->template->content->description = $campaign->description;
+		$this->template->content->campaign_name = $campaign->campaign_name;
+		$this->template->content->price = number_format($campaign->price,2);
 	}
 
 
