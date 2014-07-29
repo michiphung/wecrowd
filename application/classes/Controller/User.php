@@ -22,7 +22,6 @@ class Controller_User extends Controller_Base {
 			$this->template->content->description = $campaign->description;
 			$this->template->content->price = number_format($campaign->price,2);
 			$this->template->content->edit = true;
-			$this->template->content->wepay_link = 'https://stage.wepay.com/account/' . $campaign->wepay_account_id;
 		}
 		else {
 			$this->template->content = View::factory('welcome/index');
@@ -78,6 +77,7 @@ class Controller_User extends Controller_Base {
 		$this->template->content->campaign_name = $campaign->campaign_name;
 		$this->template->content->price = number_format($campaign->price,2);
 		$this->template->content->base = URL::base($this->request);
+		$this->template->content->wepay_link = 'https://stage.wepay.com/account/' . $campaign->wepay_account_id;
 	}
 
 	public function action_create_credit_card(){
