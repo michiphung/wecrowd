@@ -94,7 +94,7 @@ class Controller_User extends Controller_Base {
 
 		try {
             Controller_Wepayapi::create_checkout($credit_card_id, $campaign);
-            HTTP::redirect('/user/payment_success?account_id=' . $id);
+            //HTTP::redirect('/user/payment_success?account_id=' . $id);
         } catch (WePayPermissionException $e) {
             $this->template->content = "There was an error: " . $e->getMessage();
             return;
