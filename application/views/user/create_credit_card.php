@@ -31,8 +31,8 @@ function chargeCard(){
                 // show a success page
 
             }
-            var account_id = document.getElementById("account_id").value;
-            window.location.href = '/user/payment_success' + '?account_id=' + account_id;
+            // var account_id = document.getElementById("account_id").value;
+            // window.location.href = '/user/payment_success' + '?account_id=' + account_id;
         } );
     }
 </script>
