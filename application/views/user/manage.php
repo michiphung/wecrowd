@@ -3,7 +3,7 @@
 <head>
 	<br>
 	<br>
-	<h1><font size="6"><center>Welcome to WeCrowd. <br> Now lets get you set up. </center></font></h1>
+	<h1><font size="6"><center>Welcome to WeCrowd. <br> Now let's get you set up. </center></font></h1>
 	<br>
 	<hr  align = "center" width="10%" color = #ee5e26 size =10>
 	<style>
