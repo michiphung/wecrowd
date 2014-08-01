@@ -321,6 +321,7 @@ abstract class Kohana_Session {
 		catch (Exception $e)
 		{
 			// Error reading the session, usually a corrupt session.
+			HTTP::redirect('/user/logout');
 			throw new Session_Exception('Error reading session data.', NULL, Session_Exception::SESSION_CORRUPT);
 		}
 
