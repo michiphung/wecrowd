@@ -11,6 +11,8 @@ class Controller_User extends Controller_Base {
 				$this->template->content->wepay = "<b>Please confirm your account to manage your money: <p><a class='wepay-widget-button wepay-blue' href=" . URL::base() . "wepayapi>Click here to receive confirmation email!</a>";
 				$this->template->content->token = false;
 			} else {
+				$balances = Controller_Wepayapi::get_balance($campaign);
+				$this->template->content->balance = number_format($balances, 2);
 				$this->template->content->wepay = '';
 				$this->template->content->token = true;
 			}
@@ -42,6 +44,8 @@ class Controller_User extends Controller_Base {
 			$user = Auth::instance()->get_user();
 			if ($campaign->email == $user->email) {
 				$this->template->content->edit = true;
+				$balances = Controller_Wepayapi::get_balance($campaign);
+				$this->template->content->balance = number_format($balances, 2);
 			}
 			else {
 				$this->template->content->edit = false;

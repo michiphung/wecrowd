@@ -32,6 +32,9 @@
     echo "<br>";
     echo "<br>";
     echo "<a href=$wepay_link?>Payment account</a>";
+    echo "Account Summary";
+    echo "<br>";
+    echo "Balance: ?" . $balance;
 }?>
     
 
