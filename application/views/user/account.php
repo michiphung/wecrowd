@@ -31,10 +31,11 @@
     echo "<a id=\"delete\" href=" . URL::base() . 'user/delete>Delete</a>';
     echo "<br>";
     echo "<br>";
-    echo "<a href=$wepay_link?>Payment account</a>";
-    echo "Account Summary";
-    echo "<br>";
-    echo "Balance: ?" . $balance;
+    echo "<a href=$wepay_link?>Payment account</a><p>";
+    echo "Account Summary<p>";
+    if ($token) {
+    	echo "Balance: $" . $balance;
+    }
 }?>
     
 
