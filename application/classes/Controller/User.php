@@ -53,8 +53,8 @@ class Controller_User extends Controller_Base {
 					$balances = Controller_Wepayapi::get_balance($campaign);
 					$this->template->content->token = true;
 					$this->template->content->balance = number_format($balances, 2);
-					$this->template->content->status = Controller_Wepayipn::get_state($campaign);}
-
+					$this->template->content->status = Controller_Wepayipn::get_state($campaign);
+				}
 			} else {
 				$this->template->content->edit = false;
 				if ($campaign->hasAccountId()) {
