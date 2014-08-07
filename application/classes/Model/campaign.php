@@ -15,7 +15,8 @@ class Model_campaign extends ORM {
                     'description'   => $this->first_name."'s WeCrowd account",
                     'country'       => "US",
                     'currencies'    => array("USD"),
-                    'type'          => $this->account_type 
+                    'type'          => $this->account_type,
+                    'callback_uri'  => URL::site(NULL, TRUE) . '/wepayipn/' 
                     ));
         }
         catch (Exception $e) {

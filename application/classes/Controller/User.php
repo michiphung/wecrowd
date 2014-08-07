@@ -12,6 +12,7 @@ class Controller_User extends Controller_Base {
 				$this->template->content->token = false;
 			} else {
 				$balances = Controller_Wepayapi::get_balance($campaign);
+				$this->template->content->status = Controller_Wepayipn::get_state($chef);
 				$this->template->content->balance = number_format($balances, 2);
 				$this->template->content->wepay = '';
 				$this->template->content->token = true;
@@ -44,30 +45,21 @@ class Controller_User extends Controller_Base {
 			$user = Auth::instance()->get_user();
 			if ($campaign->email == $user->email) {
 				$this->template->content->edit = true;
-				$balances = Controller_Wepayapi::get_balance($campaign);
-				$this->template->content->balance = number_format($balances, 2);
-			}
-			else {
+				if (!($campaign->hasAccessToken())) {
+					$this->template->content->wepay = "<b>Please confirm account to manage your money: <p><a class='wepay-widget-button wepay-blue' href=" . URL::base() . "wepayapi>Click here to create your WeCrowd account</a>";
+					$this->template->content->token = false
+				} else {
+					$balances = Controller_Wepayapi::get_balance($campaign);
+					$this->template->content->token = true;
+					$this->template->content->balance = number_format($balances, 2);
+					$this->template->content->status = Controller_Wepayipn::get_state($campaign);
+				}
+			} else {
 				$this->template->content->edit = false;
 			}
-
-			if ($campaign->hasAccessToken()) {
-				$this->template->content->token = true;
-			}
-
-			if (!($campaign->hasAccessToken())) {
-				$this->template->content->wepay = "<b>Please confirm account to manage your money: <p><a class='wepay-widget-button wepay-blue' href=" . URL::base() . "wepayapi>Click here to create your WeCrowd account</a>";
-				$this->template->content->token = false;
-			}
-			else if (!($this->template->content->edit) && $campaign->hasAccountId()) {
-				$this->template->content->wepay = "<a href=" . URL::base() . "user/create_credit_card/".$id." class='btn btn-danger btn-large' id='buy-now-button'>Donate to ".$campaign->campaign_name." Now!</a>";
-
-			}
-			else {
-				$this->template->content->wepay = '';
-			}
-		}
-		else {
+		} else if (!($this->template->content->edit) && $campaign->hasAccountId()) {
+			$this->template->content->wepay = "<a href=" . URL::base() . "user/create_credit_card/".$id." class='btn btn-danger btn-large' id='buy-now-button'>Donate to ".$campaign->campaign_name." Now!</a>";
+		} else {
 			$this->template->content->wepay = '';
 			if ($campaign->hasAccountId()) {
 				$this->template->content->wepay = "<a href=". URL::base() . "user/create_credit_card/".$id." class='btn btn-danger btn-large' id='buy-now-button'>Donate to ".$campaign->campaign_name." Now!</a>";
