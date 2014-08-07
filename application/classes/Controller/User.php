@@ -48,7 +48,7 @@ class Controller_User extends Controller_Base {
 				$this->template->content->edit = true;
 				if (!($campaign->hasAccessToken())) {
 					$this->template->content->wepay = "<b>Please confirm account to manage your money: <p><a class='wepay-widget-button wepay-blue' href=" . URL::base() . "wepayapi>Click here to create your WeCrowd account</a>";
-					$this->template->content->token = false
+					$this->template->content->token = false;
 				} else {
 					$balances = Controller_Wepayapi::get_balance($campaign);
 					$this->template->content->token = true;
