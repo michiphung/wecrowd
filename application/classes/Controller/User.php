@@ -41,6 +41,7 @@ class Controller_User extends Controller_Base {
 		}
 		$campaign = ORM::factory('campaign')->where('id', '=', $id)->find();
 		$this->template->content = View::factory('user/account');
+
 		if (Auth::instance()->logged_in()) {
 			$user = Auth::instance()->get_user();
 			if ($campaign->email == $user->email) {
@@ -52,21 +53,28 @@ class Controller_User extends Controller_Base {
 					$balances = Controller_Wepayapi::get_balance($campaign);
 					$this->template->content->token = true;
 					$this->template->content->balance = number_format($balances, 2);
-					$this->template->content->status = Controller_Wepayipn::get_state($campaign);
-				}
+					$this->template->content->status = Controller_Wepayipn::get_state($campaign);}
+
 			} else {
 				$this->template->content->edit = false;
+				if ($campaign->hasAccountId()) {
+					$this->template->content->wepay = "<a href=" . URL::base() . "user/create_credit_card/".$id." class='btn btn-danger btn-large' id='buy-now-button'>Donate to ".$campaign->campaign_name." Now!</a>";
+					$this->template->content->token = true;
+				} else {
+					$this->template->content->wepay = '';
+					$this->template->content->token = false;
+				}
 			}
-		} else if (!($this->template->content->edit) && $campaign->hasAccountId()) {
-			$this->template->content->wepay = "<a href=" . URL::base() . "user/create_credit_card/".$id." class='btn btn-danger btn-large' id='buy-now-button'>Donate to ".$campaign->campaign_name." Now!</a>";
-		} else {
-			$this->template->content->wepay = '';
-			if ($campaign->hasAccountId()) {
-				$this->template->content->wepay = "<a href=". URL::base() . "user/create_credit_card/".$id." class='btn btn-danger btn-large' id='buy-now-button'>Donate to ".$campaign->campaign_name." Now!</a>";
-			}
-			$this->template->content->token = true;
+		} 
+		else {
 			$this->template->content->edit = false;
-			$this->template->content->status = '';
+			if ($campaign->hasAccountId()) {
+				$this->template->content->wepay = "<a href=" . URL::base() . "user/create_credit_card/".$id." class='btn btn-danger btn-large' id='buy-now-button'>Donate to ".$campaign->campaign_name." Now!</a>";
+				$this->template->content->token = true;
+			} else {
+				$this->template->content->wepay = "";
+				$this->template->content->token = false;
+			}
 		}
 		$this->template->content->first_name = $campaign->first_name;
 		$this->template->content->last_name = $campaign->last_name;		
