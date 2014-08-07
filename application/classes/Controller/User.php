@@ -66,6 +66,7 @@ class Controller_User extends Controller_Base {
 			}
 			$this->template->content->token = true;
 			$this->template->content->edit = false;
+			$this->template->content->status = '';
 		}
 		$this->template->content->first_name = $campaign->first_name;
 		$this->template->content->last_name = $campaign->last_name;		
