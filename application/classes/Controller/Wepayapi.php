@@ -3,8 +3,6 @@
 class Controller_Wepayapi extends Controller_Base {
 
     public function action_index() {
-        echo 1;
-
         if (Auth::instance()->logged_in()) {
             $config = Kohana::$config->load('wepay');
 
