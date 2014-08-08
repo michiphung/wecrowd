@@ -19,6 +19,7 @@ class Controller_Wepayipn extends Controller{
 
             // $balance = $response->balances;
             // $campaign->balance = $balance[0]->balance;
+            echo $campaign->first_name;
             $campaign->state = $response->state;
             $campaign->save();
     	}
