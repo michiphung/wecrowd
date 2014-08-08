@@ -75,7 +75,7 @@ class Controller_User extends Controller_Base {
 				$this->template->content->token = false;
 			}
 		}
-		$this->template->content->$state = $campaign->state;
+		$this->template->content->state = $campaign->state;
 		$this->template->content->first_name = $campaign->first_name;
 		$this->template->content->last_name = $campaign->last_name;		
 		$this->template->content->email = $campaign->email;
