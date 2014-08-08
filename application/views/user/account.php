@@ -33,6 +33,7 @@
     echo "<br>";
     echo "<a href=$wepay_link?>Payment account</a><p>";
     echo "Account Summary<p>";
+    echo "<a href=" . URL::base() . 'wepayipn>Click Here</a>';
     if ($token) {
     	echo "Balance: $" . $balance;
     }
