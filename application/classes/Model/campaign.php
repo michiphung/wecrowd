@@ -16,7 +16,7 @@ class Model_campaign extends ORM {
                     'country'       => "US",
                     'currencies'    => array("USD"),
                     'type'          => $this->account_type,
-                    'callback_uri'  => URL::site(NULL, TRUE) . '/wepayipn/get_state/' 
+                    'callback_uri'  => URL::site(NULL, TRUE) . '/wepayipn/' 
                     ));
         }
         catch (Exception $e) {
@@ -123,5 +123,11 @@ class Model_campaign extends ORM {
             return true;
         }
         return false;
+    }
+
+    public function getState() {
+        if (isset($this->state)) {
+            return $this->state;
+        }
     }
 }
