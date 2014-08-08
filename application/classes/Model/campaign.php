@@ -16,7 +16,7 @@ class Model_campaign extends ORM {
                     'country'       => "US",
                     'currencies'    => array("USD"),
                     'type'          => $this->account_type,
-                    'callback_uri'  => URL::site(NULL, TRUE) . '/wepayipn/' 
+                    'callback_uri'  => URL::site(NULL, TRUE) . 'wepayipn/' 
                     ));
         }
         catch (Exception $e) {
