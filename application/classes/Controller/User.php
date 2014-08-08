@@ -12,7 +12,6 @@ class Controller_User extends Controller_Base {
 				$this->template->content->token = false;
 			} else {
 				$balances = Controller_Wepayapi::get_balance($campaign);
-				$this->template->content->status = Controller_Wepayipn::get_state($chef);
 				$this->template->content->balance = number_format($balances, 2);
 				$this->template->content->wepay = '';
 				$this->template->content->token = true;
@@ -53,7 +52,6 @@ class Controller_User extends Controller_Base {
 					$balances = Controller_Wepayapi::get_balance($campaign);
 					$this->template->content->token = true;
 					$this->template->content->balance = number_format($balances, 2);
-					$this->template->content->status = Controller_Wepayipn::get_state($campaign);
 				}
 			} else {
 				$this->template->content->edit = false;
@@ -87,7 +85,7 @@ class Controller_User extends Controller_Base {
 	}
 
 	public function action_acount_summary() {
-		
+
 	}
 
 	public function action_create_credit_card(){
