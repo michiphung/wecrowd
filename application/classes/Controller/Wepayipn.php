@@ -14,7 +14,7 @@ class Controller_Wepayipn extends Controller_Base {
 			}
 			$wepay = new WePay($campaign->getAccessToken());
         	try {
-           		 $response = $wepay->request('account/', array(
+           		 $response = $wepay->request('account', array(
                 	    'account_id'          => $account_id
                     	));
         	} catch (Exception $e) {
