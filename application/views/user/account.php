@@ -32,7 +32,7 @@
     echo "<br>";
     echo "<br>";
     if ($token) {
-    	echo "<h2>Account Detail</h2></p>";
+    	echo "<h1>Account Detail</h1></p>";
     	if ($state == "action_required") {
     		echo "Your profile is not fully completed! Please <a href=" . URL::base(). "user/manage>manage</a> your account</p>";
     		echo "<a href=$wepay_link?>Payment account</a></p>";
