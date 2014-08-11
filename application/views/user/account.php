@@ -31,8 +31,8 @@
     echo "<a id=\"delete\" href=" . URL::base() . 'user/delete>Delete</a>';
     echo "<br>";
     echo "<br>";
-    echo "Account Detail</p>";
     if ($token) {
+    	echo "Account Detail</p>";
     	if ($state == "action_required") {
     		echo "Your profile is not fully completed! Please <a href=" . URL::base(). "user/manage>manage</a> your account</p>";
     		echo "<a href=$wepay_link?>Payment account</a></p>";
