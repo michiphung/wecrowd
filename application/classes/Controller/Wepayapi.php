@@ -85,6 +85,7 @@ class Controller_Wepayapi extends Controller_Base {
     }
 
     public static function resend_email($merchant) {
+        $config = Kohana::$config->load('wepay');
         $resend_email = new WePay($merchant->getAccessToken());
         try {    
             $resend_email->request('user/resend_confirmation/', array());
