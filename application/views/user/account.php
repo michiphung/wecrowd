@@ -3,7 +3,7 @@
 <p> <? echo $wepay; ?></p>
 <p>
 <b>Name:</b>
-<? echo $first_name' ' . $last_name; ?>
+<? echo $first_name . ' ' . $last_name; ?>
 </p>
 <p>
 <b>Email:</b>
