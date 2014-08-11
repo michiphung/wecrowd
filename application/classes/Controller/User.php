@@ -286,8 +286,8 @@ class Controller_User extends Controller_Base {
     	if (Auth::instance()->logged_in()) {
     		$user = Auth::instance()->get_user();
 			$campaign = ORM::factory('campaign')->where('email', '=', $user->email)->find();
-    		$this->template->content = "Thanks! Please check your email to finish registering.";
     		Controller_Wepayapi::resend_email($campaign);
+    		$this->template->content = "Thanks! Please check your email to finish registering.";
     	}
     	else {
     		$this->template->content = "Error, you're not logged in!";
