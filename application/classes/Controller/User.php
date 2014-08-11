@@ -11,8 +11,8 @@ class Controller_User extends Controller_Base {
 				$this->template->content->wepay = "<b>Please confirm your account to manage your money: <p><a class='wepay-widget-button wepay-blue' href=" . URL::base() . "wepayapi>Click here to receive confirmation email!</a>";
 				$this->template->content->token = false;
 			} else {
-				$balances = Controller_Wepayapi::get_balance($campaign);
-				$this->template->content->balance = number_format($balances, 2);
+				// $balances = Controller_Wepayapi::get_balance($campaign);
+				// $this->template->content->balance = number_format($balances, 2);
 				$this->template->content->wepay = '';
 				$this->template->content->token = true;
 			}
@@ -49,9 +49,9 @@ class Controller_User extends Controller_Base {
 					$this->template->content->wepay = "<b>Please confirm account to manage your money: <p><a class='wepay-widget-button wepay-blue' href=" . URL::base() . "wepayapi>Click here to create your WeCrowd account</a>";
 					$this->template->content->token = false;
 				} else {
-					$balances = Controller_Wepayapi::get_balance($campaign);
+					// $balances = Controller_Wepayapi::get_balance($campaign);
 					$this->template->content->token = true;
-					$this->template->content->balance = number_format($balances, 2);
+					// $this->template->content->balance = number_format($balances, 2);
 					$this->template->content->wepay = '';
 				}
 			} else {
