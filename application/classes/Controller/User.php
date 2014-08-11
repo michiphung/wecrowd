@@ -16,7 +16,7 @@ class Controller_User extends Controller_Base {
 				$this->template->content->wepay = '';
 				$this->template->content->token = true;
 			}
-
+			$this->template->content->state = $campaign->state;
 			$this->template->content->first_name = $campaign->first_name;
 			$this->template->content->last_name = $campaign->last_name;
 			$this->template->content->email = $campaign->email;
@@ -129,17 +129,20 @@ class Controller_User extends Controller_Base {
 	}
 
 	public function action_manage() {
-		$user = Auth::instance()->get_user();
-        $campaign = ORM::factory('campaign')->where('email', '=', $user->email)->find();
-        try  {
-        	$manage_uri = Controller_Wepayapi::create_manage($campaign->wepay_account_id);
-        } catch (WePayPermissionException $e) {
-        	$this->template->content = "There was an error" . $e->getMessage();
-        	return;
-        }
-        $this->template->content = View::factory('user/manage');
-        $this->template->content->manage_uri = $manage_uri;
-       
+		if (Auth::instance()->logged_in()){
+			$user = Auth::instance()->get_user();
+	        $campaign = ORM::factory('campaign')->where('email', '=', $user->email)->find();
+	        try  {
+	        	$manage_uri = Controller_Wepayapi::create_manage($campaign->wepay_account_id);
+	        } catch (WePayPermissionException $e) {
+	        	$this->template->content = "There was an error" . $e->getMessage();
+	        	return;
+	        }
+	        $this->template->content = View::factory('user/manage');
+	        $this->template->content->manage_uri = $manage_uri;
+	    } else {
+	    	$this->template->content = "Error, you are not logged in!";
+	    }
      } 
 
 	public function action_complete_registration() {
@@ -277,6 +280,18 @@ class Controller_User extends Controller_Base {
 			$this->template->content = "Error, you're not logged in!";
 		}
 
+    }
+
+    public function action_resend_email() {
+    	if (Auth::instance()->logged_in()) {
+    		$user = Auth::instance()->get_user();
+			$campaign = ORM::factory('campaign')->where('email', '=', $user->email)->find();
+    		$this->template->content = "Thanks! Please check your email to finish registering.";
+    		Controller_Wepayapi::resend_email($campaign);
+    	}
+    	else {
+    		$this->template->content = "Error, you're not logged in!";
+    	}
     }
 
 	public function action_update(){
