@@ -31,15 +31,16 @@
     echo "<a id=\"delete\" href=" . URL::base() . 'user/delete>Delete</a>';
     echo "<br>";
     echo "<br>";
-    echo "<a href=$wepay_link?>Payment account</a></p>";
-    echo "Account Summary</p>";
+    echo "Account Detail</p>";
     if ($token) {
     	if ($state == "action_required") {
     		echo "Your profile is not fully completed! Please <a href=" . URL::base(). "user/manage>manage</a> your account</p>";
+    		echo "<a href=$wepay_link?>Payment account</a></p>";
     	} else if ($state == "active") {
     		echo "Your account is completed and ready to receive payments!</p>";
+    		echo "<a href=$wepay_link?>Payment account</a></p>";
     	} else {
-    		echo "You still have not confirmed your account. Click <a href=" . URL::base(). "user/resend_email>here</a> to resend your confirmation email. </p>";
+    		echo "You still have not confirmed your account.<br>Click <a href=" . URL::base(). "user/resend_email>here</a> to resend your confirmation email. </p>";
     	}
     	echo "State: " . $state . "</p>";
     	// echo "Balance: $" . $balance;
