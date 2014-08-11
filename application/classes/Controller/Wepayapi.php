@@ -83,4 +83,16 @@ class Controller_Wepayapi extends Controller_Base {
         return $balance[0]->balance;
 
     }
+
+    public static function resend_email($merchant) {
+        $resend_email = new WePay($merchant->getAccessToken());
+        try {    
+            $resend_email->request('user/resend_confirmation/', array());
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            return false;
+        }
+        return true;
+
+    }
 }
