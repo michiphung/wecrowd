@@ -10,7 +10,6 @@ class Controller_Wepayipn extends Controller_Base {
         $campaign = ORM::factory('campaign')->where('wepay_account_id', '=', $account_id)->find();
         $wepay = new WePay($campaign->getAccessToken());
         	try {
-                 echo 1;
            		 $response = $wepay->request('account', array(
                 	    'account_id'          => $account_id
                     	));
@@ -18,8 +17,8 @@ class Controller_Wepayipn extends Controller_Base {
             	echo $e->getMessage();
         	}
 
-            // $balance = $response->balances;
-            // $campaign->balance = $balance[0]->balance;
+            $balance = $response->balances;
+            $campaign->balance = $balance[0]->balance;
             $campaign->state = $response->state;
             $campaign->save();
     	}

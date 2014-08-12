@@ -1,37 +1,56 @@
-<h1 class="floatLeft"><? echo $first_name?>'s Campaign</h1>
+#wrap {
+   width:600px;
+   margin:0 auto;
+}
+#left_col {
+   float:left;
+   width:300px;
+}
+#right_col {
+   float:right;
+   width:300px;
+}
 
-<p> <? echo $wepay; ?></p>
-<p>
-<b>Name:</b>
-<? echo $first_name . ' ' . $last_name; ?>
-</p>
-<p>
-<b>Email:</b>
-<? echo $email; ?>
-</p>
+	<div id = "left_col">
+	<h1 class="floatLeft"><? echo $first_name?>'s Campaign</h1>
 
-<p>
-<b>Campaign:</b>
-<? echo $campaign_name; ?>
-</p>
+		<p> <? echo $wepay; ?></p>
+		<p>
+		<b>Name:</b>
+		<? echo $first_name . ' ' . $last_name; ?>
+		</p>
+		<p>
+		<b>Email:</b>
+		<? echo $email; ?>
+		</p>
 
-<p>
-<b>Description:</b>
-<? echo $description; ?>
+		<p>
+		<b>Campaign:</b>
+		<? echo $campaign_name; ?>
+		</p>
 
-</p>
+		<p>
+		<b>Description:</b>
+		<? echo $description; ?>
 
-<p>
-<b>Donation:</b>
-<? echo '$'.$price; ?>
-</p>
-<p><p>
-<? if ($edit) {
-    echo "<a id=\"edit\" href=" . URL::base() . 'user/edit>Edit</a><p>';
-    echo "<a id=\"delete\" href=" . URL::base() . 'user/delete>Delete</a>';
-    echo "<br>";
-    echo "<br>";
-    if ($token) {
+		</p>
+
+		<p>
+		<b>Donation:</b>
+		<? echo '$'.$price; ?>
+		</p>
+		<p><p>
+		<? if ($edit) {
+		    echo "<a id=\"edit\" href=" . URL::base() . 'user/edit>Edit</a><p>';
+		    echo "<a id=\"delete\" href=" . URL::base() . 'user/delete>Delete</a>';
+		    echo "<br>";
+		    echo "<br>";
+		}
+		?>
+	</div>
+
+	<div id="right_col">
+	<? if ($token) {
     	echo "<h1>Account Detail</h1></p>";
     	if ($state == "action_required") {
     		echo "Your profile is not fully completed! Please <a href=" . URL::base(). "user/manage>manage</a> your account</p>";
@@ -43,11 +62,10 @@
     		echo "You still have not confirmed your account.<br>Click <a href=" . URL::base(). "user/resend_email>here</a> to resend your confirmation email. </p>";
     	}
     	echo "State: " . $state . "</p>";
-    	// echo "Balance: $" . $balance;
-    }
-}?>
-    
-
+    	echo "Balance: $" . $balance;
+    	}
+	}?>
+	</div>
 
 <? if (!empty($notice)) { ?>
 <div class="alert alert-info">
