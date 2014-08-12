@@ -64,7 +64,7 @@
     	echo "State: " . $state . "</p>";
     	echo "Balance: $" . $balance;
     	}
-	}?>
+	?>
 	</div>
 
 <? if (!empty($notice)) { ?>
