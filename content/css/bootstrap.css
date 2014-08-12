@@ -6150,14 +6150,14 @@ a.badge:focus {
 }
 
 #wrap {
-   width:600px;
-   margin:0 auto;
+   width:1000px;
+   margin:1rem;
 }
 #left_col {
    float:left;
-   width:300px;
+   width:350px;
 }
 #right_col {
    float:right;
-   width:300px;
+   width:450px;
 }
