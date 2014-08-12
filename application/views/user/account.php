@@ -1,57 +1,39 @@
-#wrap {
-   width:600px;
-   margin:0 auto;
-}
-#left_col {
-   float:left;
-   width:300px;
-}
-#right_col {
-   float:right;
-   width:300px;
-}
+<h1 class="floatLeft"><? echo $first_name?>'s Campaign</h1>
 
-	<div id = "left_col">
-	<h1 class="floatLeft"><? echo $first_name?>'s Campaign</h1>
+	<p> <? echo $wepay; ?></p>
+	<p>
+	<b>Name:</b>
+	<? echo $first_name . ' ' . $last_name; ?>
+	</p>
+	<p>
+	<b>Email:</b>
+	<? echo $email; ?>
+	</p>
 
-		<p> <? echo $wepay; ?></p>
-		<p>
-		<b>Name:</b>
-		<? echo $first_name . ' ' . $last_name; ?>
-		</p>
-		<p>
-		<b>Email:</b>
-		<? echo $email; ?>
-		</p>
+	<p>
+	<b>Campaign:</b>
+	<? echo $campaign_name; ?>
+	</p>
 
-		<p>
-		<b>Campaign:</b>
-		<? echo $campaign_name; ?>
-		</p>
+	<p>
+	<b>Description:</b>
+	<? echo $description; ?>
 
-		<p>
-		<b>Description:</b>
-		<? echo $description; ?>
+	</p>
 
-		</p>
+	<p>
+	<b>Donation:</b>
+	<? echo '$'.$price; ?>
+	</p>
+	<p><p>
+	<? if ($edit) {
+	    echo "<a id=\"edit\" href=" . URL::base() . 'user/edit>Edit</a><p>';
+	    echo "<a id=\"delete\" href=" . URL::base() . 'user/delete>Delete</a>';
+	    echo "<br>";
+	    echo "<br>";
 
-		<p>
-		<b>Donation:</b>
-		<? echo '$'.$price; ?>
-		</p>
-		<p><p>
-		<? if ($edit) {
-		    echo "<a id=\"edit\" href=" . URL::base() . 'user/edit>Edit</a><p>';
-		    echo "<a id=\"delete\" href=" . URL::base() . 'user/delete>Delete</a>';
-		    echo "<br>";
-		    echo "<br>";
-		}
-		?>
-	</div>
-
-	<div id="right_col">
-	<? if ($token) {
-    	echo "<h1>Account Detail</h1></p>";
+    if ($token) {
+    	echo "<h1 class='floatRight'>Account Detail</h1></p>";
     	if ($state == "action_required") {
     		echo "Your profile is not fully completed! Please <a href=" . URL::base(). "user/manage>manage</a> your account</p>";
     		echo "<a href=$wepay_link?>Payment account</a></p>";
@@ -63,9 +45,9 @@
     	}
     	echo "State: " . $state . "</p>";
     	echo "Balance: $" . $balance;
-    	}
-	?>
-	</div>
+    }
+}?>
+
 
 <? if (!empty($notice)) { ?>
 <div class="alert alert-info">
