@@ -3,27 +3,27 @@
 	<h1 class="floatLeft"><? echo $first_name?>'s Campaign</h1>
 		<p> <? echo $wepay; ?></p>
 		<p>
-		<b><font color="7acaea">Name:</font></b>
+		<b><font color="7acaea" weight=300>Name:</font></b>
 		<? echo $first_name . ' ' . $last_name; ?>
 		</p>
 		<p>
-		<b><font color="7acaea">Email:</font></b>
+		<b><font color="7acaea" weight=300>Email:</font></b>
 		<? echo $email; ?>
 		</p>
 
 		<p>
-		<b><font color="7acaea">Campaign:</font></b>
+		<b><font color="7acaea" weight=300>Campaign:</font></b>
 		<? echo $campaign_name; ?>
 		</p>
 
 		<p>
-		<b><font color="7acaea">Description:</font></b>
+		<b><font color="7acaea" weight=300>Description:</font></b>
 		<? echo $description; ?>
 
 		</p>
 
 		<p>
-		<b><font color="7acaea">Donation:</font></b>
+		<b><font color="7acaea" weight=300>Donation:</font></b>
 		<? echo '$'.$price; ?>
 		</p>
 		<p><p>
@@ -40,18 +40,18 @@
 		<? if ($token) {
 	    	echo "<h1>Account Detail</h1></p>";
 	    	if ($state == "action_required") {
-	    		echo "<font color='7acaea'>Status:</font> Action Required";
+	    		echo "<font color='7acaea' weight=300>Status:</font> Action Required";
 	    		echo "Your profile is not fully completed! Please <a href=" . URL::base(). "user/manage>manage</a> your account</p>";
 	    		echo "<a href=$wepay_link?>Payment account</a></p>";
 	    	} else if ($state == "active") {
-	    		echo "<font color='7acaea'>Status:</font> Active";
+	    		echo "<font color='7acaea' weight=300>Status:</font> Active";
 	    		echo "Your account is completed and ready to receive payments!</p>";
 	    		echo "You can view your payment account <a href=$wepay_link?>here</a></p>.";
 	    	} else {
-	    		echo "<font color='7acaea'>Status:</font> Pending";
+	    		echo "<font color='7acaea' weight=300>Status:</font> Pending";
 	    		echo "You still have not confirmed your account.<br>Click <a href=" . URL::base(). "user/resend_email>here</a> to resend your confirmation email. </p>";
 	    	}
-	    	echo "<font color='7acaea'>Balance:</font> $" . $balance;
+	    	echo "<font color='7acaea' weight=300>Balance:</font> $" . $balance;
 	    }
 	    ?>
     </div>
