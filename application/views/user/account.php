@@ -3,7 +3,7 @@
 	<h1 class="floatLeft"><? echo $first_name?>'s Campaign</h1>
 		<p> <? echo $wepay; ?></p>
 		<p>
-		<b><font color="7acaea" weight=300>Name:</font></b>
+		<b><font color="7acaea" family="OpenSans">Name:</font></b>
 		<? echo $first_name . ' ' . $last_name; ?>
 		</p>
 		<p>
