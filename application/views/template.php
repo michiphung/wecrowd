@@ -9,7 +9,7 @@
 <div class="container">
     <? echo $content ?>
     <?  if (!empty($table)){
-            echo "<h3>Funding Campaigns</h3>
+            echo "<div id ='step2'><h3>Funding Campaigns</h3>
             <table class='table table-striped table-bordered'>
                 <tr>
                 <th>Name</th>    
@@ -25,7 +25,7 @@
                 echo '<td>$'.number_format($campaign->price,2).'</td>';
             }
 
-            echo '</table>';
+            echo '</table>' . '</div>';
         }
     ?>
 </div>
