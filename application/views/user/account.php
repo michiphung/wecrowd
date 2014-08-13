@@ -1,4 +1,3 @@
-c
 	<div id="left_col">
 	<h1 class="floatLeft"><? echo $first_name?>'s Campaign</h1>
 		<p> <? echo $wepay; ?></p>
@@ -65,8 +64,6 @@ c
 </div>
 <? } ?>
 
-
-<br>
 <div id="checkout_wrap">
 <?  if (!empty($checkouts)){
             echo "<div id=left_col><h1>Checkouts</h1></div>
