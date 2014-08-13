@@ -1,4 +1,4 @@
-<div id="wrap">
+c
 	<div id="left_col">
 	<h1 class="floatLeft"><? echo $first_name?>'s Campaign</h1>
 		<p> <? echo $wepay; ?></p>
@@ -65,6 +65,7 @@
 </div>
 <? } ?>
 
+<div id="wrap">
 <br>
 <?  if (!empty($checkouts)){
             echo "<div id=left_col><h1 class='floatLeft'>Checkouts made on this Account</h1></div>
@@ -85,3 +86,5 @@
             echo '</table>';
         }
     ?>
+
+</div>
