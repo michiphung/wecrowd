@@ -67,7 +67,7 @@
 
 <br>
 <?  if (!empty($checkouts)){
-            echo "<h1 class='floatLeft'>Checkouts made on this Account</h1>
+            echo "<div id=left_col><h1 class='floatLeft'>Checkouts made on this Account</h1></div>
             <table class='table table-striped table-bordered'>
                 <tr>
                 <th>ID</th>
