@@ -1,5 +1,5 @@
 <?php
-	echo HTML::style('content/css/introjs.css');
+	echo HTML::style('content/css/introjs-nassim.css');
 	echo HTML::script('content/js/intro.js') 
 	?>
 
