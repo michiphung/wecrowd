@@ -37,18 +37,18 @@
 	</div>
 
 	<div id="right_col">
-		<? if ($token) {
-	    	echo "<h1>Account Detail</h1></p>";
+		<? if ($token && $edit) {
+	    	echo "<h1>Account Details</h1></p>";
 	    	if ($state == "action_required") {
-	    		echo "<font color='7acaea' weight=300>Status:</font> Action Required";
+	    		echo "<font color='7acaea' weight=300>Status:</font> Action Required</p>";
 	    		echo "Your profile is not fully completed! Please <a href=" . URL::base(). "user/manage>manage</a> your account</p>";
 	    		echo "<a href=$wepay_link?>Payment account</a></p>";
 	    	} else if ($state == "active") {
-	    		echo "<font color='7acaea' weight=300>Status:</font> Active";
+	    		echo "<font color='7acaea' weight=300>Status:</font> Active</p>";
 	    		echo "Your account is completed and ready to receive payments!</p>";
 	    		echo "You can view your payment account <a href=$wepay_link?>here</a></p>.";
 	    	} else {
-	    		echo "<font color='7acaea' weight=300>Status:</font> Pending";
+	    		echo "<font color='7acaea' weight=300>Status:</font> Pending</p>";
 	    		echo "You still have not confirmed your account.<br>Click <a href=" . URL::base(). "user/resend_email>here</a> to resend your confirmation email. </p>";
 	    	}
 	    	echo "<font color='7acaea' weight=300>Balance:</font> $" . $balance;
@@ -65,3 +65,23 @@
 </div>
 <? } ?>
 
+
+<?  if (!empty($checkouts)){
+            echo "<h1>Checkouts made on this Account</h1>
+            <table class='table table-striped table-bordered'>
+                <tr>
+                <th>ID</th>
+                <th>Name</th>    
+                <th>State</th>
+                <th>Amount</th>
+            </tr>";
+            foreach ($checkouts as $checkout){
+                echo '<tr>';
+                echo '<td>' . $checkout->checkout_id . '</td>';
+                echo '<td>' . $checkout->payer_name . '</td>';
+                echo '<td>'.$campaign->state.'</td>';
+                echo '<td>'. $campaign->amount . '</td>';
+            }
+            echo '</table>';
+        }
+    ?>

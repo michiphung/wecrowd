@@ -84,6 +84,20 @@ class Controller_Wepayapi extends Controller_Base {
 
     }
 
+    public static function get_checkouts($merchant) {
+        $config = Kohana::$config->load('wepay');
+        $wepay = new WepPay($merchant->getAccessToken());
+        try {
+            $response = $wepay->request('checkout/find', array(
+                'account_id'                => $merchant->getAccountId()
+                ));
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+        return $response;
+    }
+
     public static function resend_email($merchant) {
         $config = Kohana::$config->load('wepay');
         $resend_email = new WePay($merchant->getAccessToken());
