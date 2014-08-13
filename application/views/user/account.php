@@ -79,8 +79,8 @@
                 echo '<tr>';
                 echo '<td>' . $checkout->checkout_id . '</td>';
                 echo '<td>' . $checkout->payer_name . '</td>';
-                echo '<td>'.$campaign->state.'</td>';
-                echo '<td>'. $campaign->amount . '</td>';
+                echo '<td>'. $checkout->state.'</td>';
+                echo '<td>'. $checkout->amount . '</td>';
             }
             echo '</table>';
         }
