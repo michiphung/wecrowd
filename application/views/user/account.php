@@ -65,10 +65,11 @@ c
 </div>
 <? } ?>
 
-<div id="wrap">
+
 <br>
+<div id="checkout_wrap">
 <?  if (!empty($checkouts)){
-            echo "<div id=left_col><h1 class='floatLeft'>Checkouts</h1></div>
+            echo "<div id=left_col><h1>Checkouts</h1></div>
             <table class='table table-striped table-bordered'>
                 <tr>
                 <th>ID</th>

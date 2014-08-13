@@ -6161,3 +6161,7 @@ a.badge:focus {
    float:right;
    width:450px;
 }
+
+#checkout_wrap {
+   margin:1rem;
+}
