@@ -6160,6 +6160,8 @@ a.badge:focus {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
+.btn-demo:hover { background-color: #2895C0 };
+
 
 #wrap {
    width:1000px;
