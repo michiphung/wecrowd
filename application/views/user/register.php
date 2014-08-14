@@ -1,6 +1,6 @@
 <?php
   echo HTML::style('content/css/introjs-nassim.css');
-  echo HTML::script('content/js/intro.js')
+  echo HTML::script('content/js/intro.js');
   $config = Kohana::$config->load('users');
   $user = $config[0]; ?>
 
@@ -57,6 +57,19 @@
 
 <script type="text/javascript"> 
   if (RegExp('demo', 'gi').test(window.location.search)) {
-        introJs().start();
+    var intro = introJs();
+    intro.setOptions({
+      steps: [
+        {
+          intro: "To make things easier, we have already prefilled some of the registration."
+        },
+          element: '#step2'
+          intro: 'However, a confirmirmatio'
+
+        ]
+    })
+
+    introJs().start();
+
       }
 </script>
