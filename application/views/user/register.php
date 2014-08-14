@@ -42,9 +42,15 @@
       <?php echo Form::select('account_type',array( 'personal'  =>' Individual', 'business' => 'Business'), false, array('id' => 'account_type')) ?>
 
 </div>
-  <div class="actions">
+  <div datastep="4" data-intro="After registering, 'user/register' is called and and access token is passed to the account/create/ call" class="actions">
     <?php echo Form::submit('submit','Create Campaign') ?>
   </div>
 </Form>
 
 <a href="/">Back</a>
+
+<script type="text/javascript"> 
+  if (RegExp('demo', 'gi').test(window.location.search)) {
+        introJs().start();
+      }
+</script>
