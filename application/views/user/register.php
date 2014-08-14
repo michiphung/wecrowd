@@ -61,15 +61,16 @@
     intro.setOptions({
       steps: [
         {
-          intro: "To make things easier, we have already prefilled some of the registration."
+          intro: "To make things easier, we have already prefilled parts of the registration."
         },
-          element: '#step2'
-          intro: 'However, a confirmirmatio'
-
+        {
+          element: '#step2',
+          intro: 'However, a confirmation email will be sent so please provide your real email.',
+          position: 'left'
+        },
         ]
     })
+    intro.start();
 
-    introJs().start();
-
-      }
+  }
 </script>
