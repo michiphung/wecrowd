@@ -1,3 +1,7 @@
+<?php
+  echo HTML::style('content/css/introjs-nassim.css');
+  echo HTML::script('content/js/intro.js') ?>
+
 <h1>WeCrowd registration</h1>
 <?php echo Form::open('user/complete_registration') ?>
 
