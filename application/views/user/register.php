@@ -46,7 +46,7 @@
 
 </div>
 
-  <div id="step5" class="actions">
+  <div id="step5" id="registration_wrap" class="actions">
     <?php echo Form::submit('submit','Create Campaign') ?>
   </div>
 </Form>
