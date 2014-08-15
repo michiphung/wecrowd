@@ -27,21 +27,15 @@
     <?php echo Form::input('description',$user['campaign_description'],array('id' => 'description', 'readonly' => true)) ?>
   </div>
 
-  <div id="#step2">
-    <div class="field">
+    <div id="#step2" class="field">
       <label for="campaign_price">Donation Price</label>
       <?php echo Form::input('price','',array('id' => 'price')) ?>
-    </div>
 
-    <div class="field">
       <label for="campaign_email">Email</label>
       <?php echo Form::input('email','',array('id' => 'email')) ?>
-    </div>
 
-    <div class="field">
       <label for="campaign_password">Password</label>
       <?php echo Form::password('password','',array('id' => 'password')) ?>
-    </div>
   </div>
 
   <div class="field">
@@ -49,6 +43,7 @@
       <?php echo Form::select('account_type',array( 'personal'  =>' Individual', 'business' => 'Business'), false, array('id' => 'account_type')) ?>
 
 </div>
+
   <div data-intro="After registering, 'user/register' is called and and access token is passed to the account/create/ call" data step="4" class="actions">
     <?php echo Form::submit('submit','Create Campaign') ?>
   </div>
