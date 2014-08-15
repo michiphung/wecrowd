@@ -28,7 +28,7 @@
   </div>
 
     <div class="field">
-      <div id="step2">
+      <div id="step2" id="registration_wrap">
         <label for="campaign_price">Donation Price</label>
         <?php echo Form::input('price','',array('id' => 'price')) ?>
 

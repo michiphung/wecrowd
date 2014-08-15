@@ -6179,3 +6179,7 @@ a.badge:focus {
 #checkout_wrap {
    margin:2rem;
 }
+
+#registration_wrap {
+  width:14rem;
+}
