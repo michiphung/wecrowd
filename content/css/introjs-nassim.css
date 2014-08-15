@@ -191,11 +191,11 @@
 
 .introjs-button:focus,
 .introjs-button:active {
-    background: #23587A;  text-decoration: none;  
+    background: #7acaea;  text-decoration: none;  
     color: #fff;
     /* bottom: -1px; */
     box-shadow: none;
-    border-color: #173B53;
+    border-color: #2895C0;
 }
 
 /* overrides extra padding on button elements in Firefox */
