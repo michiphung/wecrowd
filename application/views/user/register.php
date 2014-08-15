@@ -27,7 +27,7 @@
     <?php echo Form::input('description',$user['campaign_description'],array('id' => 'description', 'readonly' => true)) ?>
   </div>
 
-    <div id="#step2" class="field">
+    <div class="field" id="step2">
       <label for="campaign_price">Donation Price</label>
       <?php echo Form::input('price','',array('id' => 'price')) ?>
 
