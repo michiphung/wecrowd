@@ -27,7 +27,7 @@
     <?php echo Form::input('description',$user['campaign_description'],array('id' => 'description', 'readonly' => true)) ?>
   </div>
 
-  <div id="step2">
+  <div id="#step2">
     <div class="field">
       <label for="campaign_price">Donation Price</label>
       <?php echo Form::input('price','',array('id' => 'price')) ?>
@@ -44,8 +44,6 @@
     </div>
   </div>
 
-
-  <div>
   <div class="field">
       <label for = "campaign_account_type"> Account Type </label>
       <?php echo Form::select('account_type',array( 'personal'  =>' Individual', 'business' => 'Business'), false, array('id' => 'account_type')) ?>
@@ -67,7 +65,7 @@
           intro: "To make things easier, we have already prefilled parts of the registration."
         },
         {
-          element: 'step2',
+          element: '#step2',
           intro: 'You can fill out the rest! Please provide your real email address in order to receive the confirmation email.',
           position: 'right'
         },
