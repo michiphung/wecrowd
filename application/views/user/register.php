@@ -46,7 +46,7 @@
 
 </div>
 
-  <div data-intro="After registering, 'user/register' is called and and access token is passed to the account/create/ call" data step="4" class="actions">
+  <div id="step3" class="actions">
     <?php echo Form::submit('submit','Create Campaign') ?>
   </div>
 </Form>
@@ -66,6 +66,11 @@
           intro: 'You can fill out the rest! Please provide your real email address in order to receive the confirmation email.',
           position: 'right'
         },
+        {
+          element: '#step3',
+          intro: "After registering, 'user/register' is called and and access token is passed to the account/create/ call.",
+          position:'right'
+        }
       ],
       showStepNumbers: false
     })
