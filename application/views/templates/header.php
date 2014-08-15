@@ -15,6 +15,7 @@
                            border-top: 0;
                            border-bottom: 0;
                            border-right-color: #DADADA; 
+                           z-index:999999;
                 ">REGISTER</a></li>
               <li><a href="<? echo url::base().'user/login' ?>">LOGIN</a></li>
             </ul>
