@@ -28,7 +28,7 @@
   </div>
 
     <div id="registration_wrap" class="field" >
-      <div id="step2">
+      <div id="step4">
         <label for="campaign_price">Donation Price</label>
         <?php echo Form::input('price','',array('id' => 'price')) ?>
 
@@ -46,7 +46,7 @@
 
 </div>
 
-  <div id="step3" class="actions">
+  <div id="step5" class="actions">
     <?php echo Form::submit('submit','Create Campaign') ?>
   </div>
 </Form>
@@ -62,14 +62,13 @@
           intro: "To make things easier, we have already prefilled parts of the registration."
         },
         {
-          element: '#step2',
+          element: '#step4',
           intro: 'You can fill out the rest! Please provide your real email address in order to receive the confirmation email.',
           position: 'right'
         },
         {
-          element: '#step3',
-          intro: "After registering, 'user/register' is called and and access token is passed to the account/create/ call.",
-          position:'right'
+          element: '#step5',
+          intro: "After registering, 'user/register' is called and an access token is passed to the account/create/ call.",
         }
       ],
       showStepNumbers: false
