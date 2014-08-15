@@ -45,9 +45,10 @@
       <?php echo Form::select('account_type',array( 'personal'  =>' Individual', 'business' => 'Business'), false, array('id' => 'account_type')) ?>
 
 </div>
-
-  <div id="step5" id="registration_wrap" class="actions">
-    <?php echo Form::submit('submit','Create Campaign') ?>
+  <div id="registration_wrap" >
+    <div id="step5" class="actions">
+      <?php echo Form::submit('submit','Create Campaign') ?>
+    </div>
   </div>
 </Form>
 
