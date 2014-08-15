@@ -211,13 +211,13 @@
 }
 
 .introjs-skipbutton:hover {
-    background: #EB1540;  
-    border-color: #B91D0D;
+    background: #ee5e26;  
+    border-color: #ee5e26;
   
 }
 
 .introjs-skipbutton:active, .introjs-skipbutton:focus {
-    background: #C02312;  
+    background: #ee5e26;  
     /* box-shadow: 0 1px 0px -0px #6F1309; */
   
 }
