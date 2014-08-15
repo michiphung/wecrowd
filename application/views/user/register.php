@@ -27,15 +27,17 @@
     <?php echo Form::input('description',$user['campaign_description'],array('id' => 'description', 'readonly' => true)) ?>
   </div>
 
-    <div class="field" id="step2">
-      <label for="campaign_price">Donation Price</label>
-      <?php echo Form::input('price','',array('id' => 'price')) ?>
+    <div class="field">
+      <div id="step2">
+        <label for="campaign_price">Donation Price</label>
+        <?php echo Form::input('price','',array('id' => 'price')) ?>
 
-      <label for="campaign_email">Email</label>
-      <?php echo Form::input('email','',array('id' => 'email')) ?>
+        <label for="campaign_email">Email</label>
+        <?php echo Form::input('email','',array('id' => 'email')) ?>
 
-      <label for="campaign_password">Password</label>
-      <?php echo Form::password('password','',array('id' => 'password')) ?>
+        <label for="campaign_password">Password</label>
+        <?php echo Form::password('password','',array('id' => 'password')) ?>
+      </div>
   </div>
 
   <div class="field">
