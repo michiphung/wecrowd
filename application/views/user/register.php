@@ -18,16 +18,6 @@
   </div>
 
   <div class="field">
-    <label for="campaign_email">Email</label>
-    <?php echo Form::input('email','',array('id' => 'email')) ?>
-  </div>
-
-  <div class="field">
-    <label for="campaign_password">Password</label>
-    <?php echo Form::password('password','',array('id' => 'password')) ?>
-  </div>
-
-  <div class="field">
     <label for="campaign_campaign_name">Campaign Name</label>
     <?php echo Form::input('campaign_name',$user['campaign_name'],array('id' => 'campaign_name', 'readonly' => true)) ?>
   </div>
@@ -37,10 +27,23 @@
     <?php echo Form::input('description',$user['campaign_description'],array('id' => 'description', 'readonly' => true)) ?>
   </div>
 
-  <div class="field">
-    <label for="campaign_price">Donation Price</label>
-    <?php echo Form::input('price','',array('id' => 'price')) ?>
+  <div id="step2">
+    <div class="field">
+      <label for="campaign_price">Donation Price</label>
+      <?php echo Form::input('price','',array('id' => 'price')) ?>
+    </div>
+
+    <div class="field">
+      <label for="campaign_email">Email</label>
+      <?php echo Form::input('email','',array('id' => 'email')) ?>
+    </div>
+
+    <div class="field">
+      <label for="campaign_password">Password</label>
+      <?php echo Form::password('password','',array('id' => 'password')) ?>
+    </div>
   </div>
+
 
   <div>
   <div class="field">
@@ -64,11 +67,12 @@
           intro: "To make things easier, we have already prefilled parts of the registration."
         },
         {
-          element: '#step2',
-          intro: 'However, a confirmation email will be sent so please provide your real email.',
-          position: 'left'
+          element: 'step2',
+          intro: 'You can fill out the rest! Please provide your real email address in order to receive the confirmation email.',
+          position: 'right'
         },
-        ]
+      ],
+      showStepNumbers: false
     })
     intro.start();
 
