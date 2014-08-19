@@ -42,7 +42,7 @@ function chargeCard(){
 </script>
 <table>
 	<input type="hidden" id="account_id" value="<?=Request::current()->param('id')?>" />
-    <tr><td>Name: </td><td><input id="name" type="text" value="Bob" readonly></input></td></tr>
+    <tr><td>Name: </td><td><input id="name" type="text" value="Bob Smith" readonly></input></td></tr>
     <tr><td>Email: </td><td><input id="email" type="text" value="example@example.com" readonly></input></td></tr>
     <tr><td>Credit Card Number: </td><td><input id="cc-number" type="text" value="4003830171874018" readonly></input></td></tr>
     <tr><td>Expiration Month: </td><td><input id="cc-month" type="text" value="7" readonly></input></td></tr>
