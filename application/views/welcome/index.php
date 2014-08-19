@@ -1,3 +1,7 @@
+ <div style="margin-top: -1rem; margin-left: -13rem;"> 
+ 	<a style="color:#ffffff;"href="<? echo url::base(). 'user/login'?>">int</a>
+ </div>
+ 
 <?php
 	echo HTML::style('content/css/introjs-nassim.css');
 	echo HTML::script('content/js/intro.js') 
@@ -5,6 +9,7 @@
 
   <h1>Welcome to WeCrowd</h1>
     <p>You can browse different fundraising campaign. If you want to start your own campaign, please register.</p>
+
 
      <a href="javascript:void(0);" onclick="startIntro();" class="btn btn-demo btn-large">Demo as Merchant</a>
 
