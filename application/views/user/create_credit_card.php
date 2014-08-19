@@ -42,12 +42,12 @@ function chargeCard(){
 </script>
 <table>
 	<input type="hidden" id="account_id" value="<?=Request::current()->param('id')?>" />
-    <tr><td>Name: </td><td><input id="name" type="text" placeholder="Bob"></input></td></tr>
-    <tr><td>Email: </td><td><input id="email" type="text"></input></td></tr>
-    <tr><td>Credit Card Number: </td><td><input id="cc-number" type="text"></input></td></tr>
-    <tr><td>Expiration Month: </td><td><input id="cc-month" type="text"></input></td></tr>
-    <tr><td>Expiration Year: </td><td><input id="cc-year" type="text"></input></td></tr>
-    <tr><td>CVV: </td><td><input id="cc-cvv" type="text"></input></td></tr>
-    <tr><td>Zipcode: </td><td><input id="zip" type="text"></input></td></tr>
+    <tr><td>Name: </td><td><input id="name" type="text" value="Bob" readonly></input></td></tr>
+    <tr><td>Email: </td><td><input id="email" type="text" value="example@example.com" readonly></input></td></tr>
+    <tr><td>Credit Card Number: </td><td><input id="cc-number" type="text" value="4003830171874018" readonly></input></td></tr>
+    <tr><td>Expiration Month: </td><td><input id="cc-month" type="text" value="7" readonly></input></td></tr>
+    <tr><td>Expiration Year: </td><td><input id="cc-year" type="text" value="2020" readonly></input></td></tr>
+    <tr><td>CVV: </td><td><input id="cc-cvv" type="text" value="123" readonly></input></td></tr>
+    <tr><td>Zipcode: </td><td><input id="zip" type="text" value="94306" readonly></input></td></tr>
     <tr><td></td><td><input type="submit" name="Submit" value="Submit" onclick="chargeCard()"/></td></tr>
 </table>
