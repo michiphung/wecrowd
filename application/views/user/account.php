@@ -36,7 +36,7 @@
 
 	<div id="right_col">
 		<? if ($token && $edit) {
-	    	echo "<h1>Account Details</h1></p>";
+	    	echo "<h1>Account Details</h1>";
 	    	if ($state == "action_required") {
 	    		echo "<font color='7acaea'>Status:</font> Action Required</p>";
 	    		echo "Your profile is not fully completed! Please <a href=" . URL::base(). "user/manage>manage</a> your account</p>";
@@ -54,7 +54,7 @@
 	    ?>
     </div>
 <?  if (!empty($checkouts)){
-            echo "<p>Checkouts</p>
+            echo "<h1><p>Checkouts</p></h1>
             <table class='table table-striped table-bordered'>
                 <tr>
                 <th>ID</th>
