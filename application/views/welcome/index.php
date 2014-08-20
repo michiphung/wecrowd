@@ -42,24 +42,24 @@
 
       }
 
-      function startIntro2() {
-        var intro = introJs();
-        intro.setOptions({
-          stepes: [
-          {
-            intro: "Hello! Let's take a look at the buying process."
-          },
-          {
-            element: '#step10',
-            intro: "Let's donate to Michelle's campaign"
-          }
-          ],
-          showStepNumbers: false
-          });
-        intro.start().oncomplete(function()) {
-          window.location.href = '/user/account/account/15?demo=true'
-        }):
-      }
+      // function startIntro2() {
+      //   var intro = introJs();
+      //   intro.setOptions({
+      //     stepes: [
+      //     {
+      //       intro: "Hello! Let's take a look at the buying process."
+      //     },
+      //     {
+      //       element: '#step10',
+      //       intro: "Let's donate to Michelle's campaign"
+      //     }
+      //     ],
+      //     showStepNumbers: false
+      //     });
+      //   intro.start().oncomplete(function()) {
+      //     window.location.href = '/user/account/account/15?demo=true'
+      //   }):
+      // }
     </script>
 
 <!-- Button to trigger modal -->
