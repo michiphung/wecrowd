@@ -54,7 +54,7 @@
 	    ?>
     </div>
 <?  if (!empty($checkouts)){
-            echo "<h1><p>Checkouts</p></h1>
+            echo "<p>Checkouts</p>
             <table class='table table-striped table-bordered'>
                 <tr>
                 <th>ID</th>
