@@ -4,6 +4,7 @@
     <title>WeCrowd</title>
     <?php echo HTML::style("content/css/bootstrap.css"); ?>
     <?php echo HTML::style("content/css/bootstrap-responsive.css"); ?>
+    <?php echo HTML::style("content/css/introjs-nassim.css"); ?>
 </head>
    <?php echo $header ?>
 <div class="container">
@@ -30,5 +31,7 @@
     ?>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="content/js/bootstrap.js"></script>
+<script src="content/js/intro.js"></script>
 </body>
 </html>

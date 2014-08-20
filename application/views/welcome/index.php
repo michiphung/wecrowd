@@ -12,6 +12,7 @@
 
 
      <a href="javascript:void(0);" onclick="startIntro();" class="btn btn-demo btn-large">Demo as Merchant</a>
+     <a href="javascript:void(0);" onclick="startIntro2();" class="btn btn-demo btn-large">Demo as Buyer</a>
 
      <script type="text/javascript">
       function startIntro(){
@@ -40,4 +41,54 @@
           });
 
       }
+
+      function startIntro2() {
+        var intro = introJs();
+        intro.setOptions({
+          stepes: [
+          {
+            intro: "Hello! Let's take a look at the buying process."
+          },
+          {
+            element: '#step10',
+            intro: "Let's donate to Michelle's campaign"
+          }
+          ],
+          showStepNumbers: false
+          });
+        intro.start().oncomplete(function()) {
+          window.location.href = '/user/account/account/15?demo=true'
+        }):
+      }
     </script>
+
+<!-- Button to trigger modal -->
+<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+ 
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel"><center>Modal header</center></h3>
+  </div>
+  <div class="modal-body">
+    <p><a href="javascript:void(0);" onclick="startIntro();" class="btn btn-demo btn-large" data-dismiss="modal">Demo as Merchant</a></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+  </div>
+</div>
+
+<p><a class="demo-confirm hs-brand-button">Destroy the planet</a></p>
+<p><div class="demo-result-confirm hs-doc-callout hs-doc-callout-info" style="display: none"></div></p>
+<script>
+$('.demo-confirm').click(function(){
+    vex.dialog.confirm({
+        message: 'Are you absolutely sure you want to destroy the alien planet?',
+        callback: function(value) {
+            $('.demo-result-confirm').show().html('<h4>Result</h4><p>' + (value ? 'Successfully destroyed the planet.' : 'Chicken.') + '</p>');
+        }
+    });
+});
+</script>
