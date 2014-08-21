@@ -30,6 +30,7 @@
 	    echo "<a id=\"delete\" href=" . URL::base() . 'user/delete>Delete</a>';
 	    echo "<br>";
 	    echo "<br>";
+	    echo "<h1>Checkouts</h1>";
 	 } ?>
 
 	</div>
@@ -54,8 +55,8 @@
 	    ?>
     </div>
 <?  if (!empty($checkouts)){
-            echo "<h1><p>Checkouts</p></h1>
-            <table class='table table-striped table-bordered'>
+            echo "
+            	<table class='table table-striped table-bordered'>
                 <tr>
                 <th>ID</th>
                 <th>Name</th>    
@@ -70,6 +71,8 @@
                 echo '<td>'. $checkout->amount . '</td>';
             }
             echo '</table>';
+        } else {
+        	echo "<p><h2>You have no transactions.</h2></p>"
         }
     ?>
 
