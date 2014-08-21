@@ -6176,6 +6176,10 @@ a.badge:focus {
    width:450px;
 }
 
+#checkout_wrap {
+   margin-top:22rem;
+   color:gray;
+}
 
 #registration_wrap {
   width:14rem;

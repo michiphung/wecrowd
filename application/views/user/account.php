@@ -72,7 +72,7 @@
             }
             echo '</table>';
         } else {
-        	echo "<p><h2>You have no transactions.</h2></p>";
+        	echo "<div id='checkout_wrap'><p><h2><center>You have no transactions.<center></h2></p></div>";
         }
     ?>
 
