@@ -9,6 +9,7 @@ class Controller_Wepayapi extends Controller_Base {
             $user = Auth::instance()->get_user();
             $campaign = ORM::factory('campaign')->where('email', '=', $user->email)->find();
             $base_url = URL::site(NULL, TRUE);
+            $demo = $_GET['demo'];
      
             $wepay = new WePay(NULL);
             try {
@@ -21,7 +22,7 @@ class Controller_Wepayapi extends Controller_Base {
                     'last_name'         => $campaign->last_name,
                     'original_ip'       => "74.125.224.84",
                     'original_device'   => "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_6; en-US) AppleWebKit/534.13 (KHTML, like Gecko) Chrome/9.0.597.102 Safari/534.13",
-                    'redirect_uri' => $base_url.'user/manage',
+                    'redirect_uri' => $base_url.'user/manage?demo=' $demo,
                     'callback_uri'  => URL::site(NULL, TRUE) . 'wepayipn/'
                 ));
             } catch (Exception $e) {

@@ -61,6 +61,10 @@
       // }
     </script>
 
+    <script type="text/javascript">
+    if (RegExp('demo=true', 'gi').test(window.location.search)) {
+      
+
 <!-- Button to trigger modal -->
 <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
  

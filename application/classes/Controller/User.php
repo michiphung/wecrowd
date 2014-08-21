@@ -137,6 +137,7 @@ class Controller_User extends Controller_Base {
 
 	public function action_manage() {
 		if (Auth::instance()->logged_in()){
+			$this->template->content->demo = $_GET['demo'];
 			$user = Auth::instance()->get_user();
 	        $campaign = ORM::factory('campaign')->where('email', '=', $user->email)->find();
 	        try  {
@@ -207,9 +208,9 @@ class Controller_User extends Controller_Base {
 		$success = Auth::instance()->login($_POST['email'], $_POST['password']);
 
 		if ($success) {
-			$this->template->content=$_POST['demo'];
+			//$this->template->content=$_POST['demo'];
 			//HTTP::redirect('wepayapi');
-			//HTTP::redirect('wepayapi');
+			HTTP::redirect('wepayapi?demo=' . $_POST['demo']);
 		} else{
 			$this->template->content = "There was an error!";
 		}
