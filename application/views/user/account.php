@@ -72,7 +72,7 @@
             }
             echo '</table>';
         } else {
-        	echo "<p><h2>You have no transactions.</h2></p>"
+        	echo "<p><h2>You have no transactions.</h2></p>";
         }
     ?>
 
