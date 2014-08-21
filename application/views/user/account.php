@@ -3,8 +3,8 @@
   echo HTML::script('content/js/intro.js');?>
 
 	<div id="left_col">
-	<h1 class="floatLeft"><? echo $first_name?>'s Campaign</h1>
-		<p> <div id="step10"><? echo $wepay; ?></div></p>
+	<h1 id="step10" class="floatLeft"><? echo $first_name?>'s Campaign</h1>
+		<p><? echo $wepay; ?></p>
 		<p>
 		<b><font color="7acaea" family="OpenSans">Name:</font></b>
 		<? echo $first_name . ' ' . $last_name; ?>
