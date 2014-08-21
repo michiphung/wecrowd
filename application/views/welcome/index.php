@@ -62,10 +62,10 @@
     </script>
 
 <!-- Button to trigger modal -->
-<!-- <!-- <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
  
 <!-- Modal -->
-<!-- <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel"><center>Modal header</center></h3>
@@ -90,4 +90,4 @@ $('.demo-confirm').click(function(){
         }
     });
 });
-</script> -->
+</script>
