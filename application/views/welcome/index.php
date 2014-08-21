@@ -41,24 +41,24 @@
 
       }
 
-      // function startIntro2() {
-      //   var intro = introJs();
-      //   intro.setOptions({
-      //     stepes: [
-      //     {
-      //       intro: "Hello! Let's take a look at the buying process."
-      //     },
-      //     {
-      //       element: '#step10',
-      //       intro: "Let's donate to Michelle's campaign"
-      //     }
-      //     ],
-      //     showStepNumbers: false
-      //     });
-      //   intro.start().oncomplete(function()) {
-      //     window.location.href = '/user/account/account/15?demo=true'
-      //   }):
-      // }
+      function startIntro2() {
+        var intro = introJs();
+        intro.setOptions({
+          stepes: [
+          {
+            intro: "Hello! Let's take a look at the buying process."
+          },
+          {
+            element: '#step10',
+            intro: "Let's donate to Michelle's campaign"
+          }
+          ],
+          showStepNumbers: false
+          });
+        intro.start().oncomplete(function()) {
+          window.location.href = '/user/account/account/15?demo=true'
+        }):
+      }
     </script>
 
 <!-- Button to trigger modal -->
@@ -74,15 +74,3 @@
     <p><a href="javascript:void(0);" onclick="startIntro();" class="btn btn-demo btn-large" data-dismiss="modal">Demo as Merchant</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="startIntro();" class="btn btn-demo-buyer btn-large" data-dismiss="modal">Demo as Buyer</a></p>
   </div>
 </div>
-
-<p><div class="demo-result-confirm hs-doc-callout hs-doc-callout-info" style="display: none"></div></p>
-<script>
-$('.demo-confirm').click(function(){
-    vex.dialog.confirm({
-        message: 'Are you absolutely sure you want to destroy the alien planet?',
-        callback: function(value) {
-            $('.demo-result-confirm').show().html('<h4>Result</h4><p>' + (value ? 'Successfully destroyed the planet.' : 'Chicken.') + '</p>');
-        }
-    });
-});
-</script>
