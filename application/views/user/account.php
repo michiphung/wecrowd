@@ -72,7 +72,7 @@
             }
             echo '</table>';
         } else {
-        	if (empty($checkouts) && !($edit)) {
+        	if (empty($checkouts) && ($edit)) {
         	echo "<h2> <div id='checkout_wrap'><center>You have no transactions.<center></p></div></h2>";
         }
     }
