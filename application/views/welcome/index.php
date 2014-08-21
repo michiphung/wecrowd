@@ -22,11 +22,6 @@
               { 
                 intro: "Hello! Let's take a look at the onboarding process as a merchant!"
               },
-            {
-              	element: '#step2',
-              	intro:"Here is a list of all of the merchants",
-              	position:"top"
-              },
               {
               	intro:"Let's begin by registering as a merchant!"
 

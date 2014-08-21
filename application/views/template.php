@@ -10,7 +10,7 @@
 <div class="container">
     <? echo $content ?>
     <?  if (!empty($table)){
-            echo "<div id ='step2'><h3>Funding Campaigns</h3>
+            echo "<div><h3>Funding Campaigns</h3>
             <table class='table table-striped table-bordered'>
                 <tr>
                 <th>Name</th>    

@@ -4,7 +4,7 @@
   ?>
 
 <html>
-<head>
+<head id="step5">
 	<br>
 	<br>
 	<h1><font size="6"><center>Welcome to WeCrowd. <br> Now let's get you set up. </center></font></h1>
@@ -18,7 +18,7 @@
         	<br>
         	<br>
         	<center>
-        	<div id="kyc_div"><div>
+        	<div id = "step6" id="kyc_div"><div>
 				<script type="text/javascript" src="https://www.wepay.com/min/js/iframe.wepay.js">
 				</script>
 
@@ -36,7 +36,15 @@
     intro.setOptions({
       steps: [
         {
-          intro: "Test"
+          intro: "For the KYC page, it is still your own site with an embedded wepay iframe."
+        }
+        {
+          element: "#step5"
+          intro: "This is WeCrowd's website"
+        }
+        {
+          element: '#step6'
+          intro: "This is WePay's iframe"
         }
       ],
       showStepNumbers: false
