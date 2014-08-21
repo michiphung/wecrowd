@@ -137,7 +137,7 @@ class Controller_User extends Controller_Base {
 
 	public function action_manage() {
 		if (Auth::instance()->logged_in()){
-			$this->template->content->demo = $_GET['demo'];
+			//$this->template->content->demo = $_GET['demo'];
 			$user = Auth::instance()->get_user();
 	        $campaign = ORM::factory('campaign')->where('email', '=', $user->email)->find();
 	        try  {
