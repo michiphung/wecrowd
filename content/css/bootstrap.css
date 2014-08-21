@@ -6160,7 +6160,7 @@ a.badge:focus {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   width: 13rem;
   height: 9rem;
-  font size: 33.5px;
+  font-size: 33.5px;
   line-height: 4rem;
 }
 
