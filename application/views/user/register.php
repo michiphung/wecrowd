@@ -45,6 +45,11 @@
       <?php echo Form::select('account_type',array( 'personal'  =>' Individual', 'business' => 'Business'), false, array('id' => 'account_type')) ?>
 
 </div>
+
+ <div class="field">
+    <?php echo Form::input('demo',$demo,array('id' => 'demo', 'type' => 'hidden')) ?>
+  </div>
+
   <div id="registration_wrap" >
     <div id="step5" class="actions">
       <?php echo Form::submit('submit','Create Campaign') ?>
@@ -55,7 +60,7 @@
 <a href="/">Back</a>
 
 <script type="text/javascript"> 
-  if (RegExp('demo', 'gi').test(window.location.search)) {
+  if (RegExp('demo=true', 'gi').test(window.location.search)) {
     var intro = introJs();
     intro.setOptions({
       steps: [
