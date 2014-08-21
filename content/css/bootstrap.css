@@ -6164,6 +6164,22 @@ a.badge:focus {
   line-height: 4rem;
 }
 
+.btn-demo-buyer {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #ee5e26;
+  background-image: linear-gradient(to bottom, #ee5e26, #F77543);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  width: 13rem;
+  height: 9rem;
+  font-size: 33.5px;
+  line-height: 4rem;
+}
+
+.btn-demo-buyer:hover{ background-color: #ee5e26}
+
 .btn-demo:hover { background-color: #2895C0 };
 
 
