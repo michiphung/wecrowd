@@ -202,7 +202,7 @@ class Controller_User extends Controller_Base {
 		$success = Auth::instance()->login($_POST['email'], $_POST['password']);
 
 		if ($success) {
-			HTTP::redirect('user');
+			HTTP::redirect('wepayapi');
 		} else{
 			$this->template->content = "There was an error!";
 		}
