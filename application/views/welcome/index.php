@@ -56,7 +56,7 @@
           showStepNumbers: false
           });
         intro.start().oncomplete(function()) {
-          window.location.href = '/user/account/account/15?demo=true'
+          window.location.href = '/user/account/15?demo=true'
         }):
       }
     </script>
