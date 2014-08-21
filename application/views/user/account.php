@@ -103,7 +103,7 @@
       showStepNumbers: false
     })
     intro.start().oncomplete(function() {
-    	window.location.href = "user/create_credit_card/15?demo=true"
+    	window.location= <? $base?> + "user/create_credit_card/15?demo=true"
     });
   }
 </script>
