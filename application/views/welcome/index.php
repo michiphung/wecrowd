@@ -47,7 +47,7 @@
       function startIntro2() {
         var intro = introJs();
         intro.setOptions({
-          stepes: [
+          steps: [
           {
             intro: "Hello! Let's take a look at the buying process."
           },
