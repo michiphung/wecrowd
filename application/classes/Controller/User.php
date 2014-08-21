@@ -128,11 +128,11 @@ class Controller_User extends Controller_Base {
 
 	public function action_register(){
 		$this->template->content = View::factory('user/register');
-		// try {
-		// 	$this->template->content = $_GET['demo'];
-		// } catch (Exception $e) {
-		// 	$this->template->content = "Error, invalid url";
-		// }
+		try {
+			$this->template->content->demo = $_GET['demo'];
+		} catch (Exception $e) {
+			$this->template->content->demo = false;
+		}
 	}
 
 	public function action_manage() {
