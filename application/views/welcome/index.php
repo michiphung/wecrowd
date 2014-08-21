@@ -73,13 +73,8 @@
   <div class="modal-body">
     <p><a href="javascript:void(0);" onclick="startIntro();" class="btn btn-demo btn-large" data-dismiss="modal">Demo as Merchant</a></p>
   </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary">Save changes</button>
-  </div>
 </div>
 
-<p><a class="demo-confirm hs-brand-button">Destroy the planet</a></p>
 <p><div class="demo-result-confirm hs-doc-callout hs-doc-callout-info" style="display: none"></div></p>
 <script>
 $('.demo-confirm').click(function(){
