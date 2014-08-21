@@ -128,11 +128,11 @@ class Controller_User extends Controller_Base {
 
 	public function action_register(){
 		$this->template->content = View::factory('user/register');
-		try {
-			$this->template->content = $_GET['demo'];
-		} catch (Exception $e) {
-			$this->template->content = "Error, invalid url";
-		}
+		// try {
+		// 	$this->template->content = $_GET['demo'];
+		// } catch (Exception $e) {
+		// 	$this->template->content = "Error, invalid url";
+		// }
 	}
 
 	public function action_manage() {
@@ -208,7 +208,8 @@ class Controller_User extends Controller_Base {
 
 		if ($success) {
 			$this->template->content=$_POST['demo'];
-			//HTTP::redirect('wepayapi');
+			HTTP::redirect('wepayapi');
+			HTTP::redirect('wepayapi');
 		} else{
 			$this->template->content = "There was an error!";
 		}
