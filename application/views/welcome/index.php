@@ -28,7 +28,6 @@
               	position:"top"
               },
               {
-              	element:'#step3',
               	intro:"Let's begin by registering as a merchant!"
 
           }
