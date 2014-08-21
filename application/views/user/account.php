@@ -54,7 +54,7 @@
 	    }
 	    ?>
     </div>
-<?  if (!empty($checkouts)){
+<?  if (!empty($checkouts) && $edit){
             echo "
             	<table class='table table-striped table-bordered'>
                 <tr>
