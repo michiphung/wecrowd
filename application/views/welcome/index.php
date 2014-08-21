@@ -41,7 +41,7 @@
 
       }
       </script>
-      
+
       <script type="text/javascript">
 
       function startIntro2() {
@@ -74,6 +74,6 @@
     <h3 id="myModalLabel"><center>Modal header</center></h3>
   </div>
   <div class="modal-body">
-    <p><a href="javascript:void(0);" onclick="startIntro();" class="btn btn-demo btn-large" data-dismiss="modal">Demo as Merchant</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="startIntro();" class="btn btn-demo-buyer btn-large" data-dismiss="modal">Demo as Buyer</a></p>
+    <p><a href="javascript:void(0);" onclick="startIntro();" class="btn btn-demo btn-large" data-dismiss="modal">Demo as Merchant</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="startIntro2();" class="btn btn-demo-buyer btn-large" data-dismiss="modal">Demo as Buyer</a></p>
   </div>
 </div>
