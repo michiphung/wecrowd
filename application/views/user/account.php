@@ -1,4 +1,6 @@
-	
+	<?php
+  echo HTML::style('content/css/introjs-nassim.css');
+  echo HTML::script('content/js/intro.js'); ?>
 
 	<div id="left_col">
 	<h1 class="floatLeft"><? echo $first_name?>'s Campaign</h1>
