@@ -40,6 +40,9 @@
           });
 
       }
+      </script>
+      
+      <script type="text/javascript">
 
       function startIntro2() {
         var intro = introJs();
