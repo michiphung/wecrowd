@@ -9,7 +9,7 @@
           <a class="brand" href="/"><img src="http://www.wecrowd.wepay-inc.com/content/img/wecrowd_logo_small.png"></a>
           <div class="nav-collapse collapse">
             <ul class="nav pull-right">
-              <li class="active"><a href="<? echo url::base().'user/register' ?>"
+              <li class="active"><a href="<? echo url::base().'user/register?demo=false' ?>"
                   style = "border-style: solid;
                            border-left: 0;
                            border-top: 0;
