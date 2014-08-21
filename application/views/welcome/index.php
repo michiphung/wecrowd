@@ -11,8 +11,8 @@
     <p>You can browse different fundraising campaign. If you want to start your own campaign, please register.</p>
 
 
-     <a href="javascript:void(0);" onclick="startIntro();" class="btn btn-demo btn-large">Demo as Merchant</a>
-     <a href="javascript:void(0);" onclick="startIntro2();" class="btn btn-demo btn-large">Demo as Buyer</a>
+     <!-- <a href="javascript:void(0);" onclick="startIntro();" class="btn btn-demo btn-large">Demo as Merchant</a>
+     <a href="javascript:void(0);" onclick="startIntro2();" class="btn btn-demo btn-large">Demo as Buyer</a> -->
 
      <script type="text/javascript">
       function startIntro(){

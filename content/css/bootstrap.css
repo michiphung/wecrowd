@@ -6158,6 +6158,10 @@ a.badge:focus {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  width: 13rem;
+  height: 9rem;
+  font size: 33.5px;
+  line-height: 4rem;
 }
 
 .btn-demo:hover { background-color: #2895C0 };
