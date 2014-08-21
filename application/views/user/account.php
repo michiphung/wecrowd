@@ -1,6 +1,6 @@
-	<?php
+<?php
   echo HTML::style('content/css/introjs-nassim.css');
-  echo HTML::script('content/js/intro.js'); ?>
+  echo HTML::script('content/js/intro.js');?>
 
 	<div id="left_col">
 	<h1 class="floatLeft"><? echo $first_name?>'s Campaign</h1>
@@ -91,12 +91,13 @@
 <? } ?>
 
 <script type="text/javascript"> 
-  if (RegExp('demo=true', 'gi').test(window.location.search)) {
+  if (RegExp('account/15?demo=true', 'gi').test(window.location.search)) {
     var intro = introJs();
     intro.setOptions({
       steps: [
         {
-        	intro: "Test"
+          element: "#step10",
+          intro: "Let's donate to Michelle's campaign!"
         }
       ],
       showStepNumbers: false
