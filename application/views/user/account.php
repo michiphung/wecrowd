@@ -86,4 +86,20 @@
 </div>
 <? } ?>
 
+<script type="text/javascript"> 
+  if (RegExp('account/15?demo=true', 'gi').test(window.location.search)) {
+    var intro = introJs();
+    intro.setOptions({
+      steps: [
+        {
+          intro: "Test"
+        }
+      ],
+      showStepNumbers: false
+    })
+    intro.start();
+
+  }
+</script>
+
 
