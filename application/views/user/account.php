@@ -94,10 +94,6 @@
     intro.setOptions({
       steps: [
         {
-          element: "#step10",
-          intro: "Let's donate to Michelle's campaign!"
-        },
-        {
         	intro: "Test"
         }
       ],
