@@ -27,7 +27,7 @@
 
 
 <script type="text/javascript"> 
-  if (RegExp('demo=false', 'gi').test(window.location.search)) {
+  if (RegExp('demo=true', 'gi').test(window.location.search)) {
     var intro = introJs();
     intro.setOptions({
       steps: [
