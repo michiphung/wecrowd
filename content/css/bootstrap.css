@@ -6168,7 +6168,7 @@ a.badge:focus {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #ee5e26;
-  background-image: linear-gradient(to bottom, #ee5e26, #F77543);
+  background-image: linear-gradient(to bottom, #F77543, #ee5e26);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
