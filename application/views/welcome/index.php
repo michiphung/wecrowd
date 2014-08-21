@@ -51,10 +51,6 @@
           {
             intro: "Hello! Let's take a look at the buying process."
           },
-          {
-            element: '#step10',
-            intro: "Let's donate to Michelle's campaign"
-          }
           ],
           showStepNumbers: false
           });

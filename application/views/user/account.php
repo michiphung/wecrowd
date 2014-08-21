@@ -1,6 +1,6 @@
 	<div id="left_col">
 	<h1 class="floatLeft"><? echo $first_name?>'s Campaign</h1>
-		<p> <? echo $wepay; ?></p>
+		<p> <div id="step10"><? echo $wepay; ?></div></p>
 		<p>
 		<b><font color="7acaea" family="OpenSans">Name:</font></b>
 		<? echo $first_name . ' ' . $last_name; ?>
@@ -92,13 +92,15 @@
     intro.setOptions({
       steps: [
         {
-          intro: "Test"
+          element: "#step10"
+          intro: "Let's donate to Michelle's campaign!"
         }
       ],
       showStepNumbers: false
     })
-    intro.start();
-
+    intro.start().oncomplete(function() {
+    	window.location.href = "user/create_credit_card/15?demo=true"
+    });
   }
 </script>
 
