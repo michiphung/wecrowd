@@ -37,11 +37,11 @@
       steps: [
         {
           intro: "For the KYC page, it is still your own site with an embedded wepay iframe."
-        }
+        },
         {
           element: "#step5",
           intro: "This is WeCrowd's website"
-        }
+        },
         {
           element: '#step6',
           intro: "This is WePay's iframe"
