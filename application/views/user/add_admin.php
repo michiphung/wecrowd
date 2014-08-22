@@ -4,22 +4,22 @@
 
   <div class="field">
     <label for="campaign_first_name">First Name</label>
-    <?php echo Form::input('first_name', '',array('id' => 'first_name') ?>
+    <?php echo Form::input('first_name', '',array('id' => 'first_name')) ?>
   </div>
 
    <div class="field">
     <label for="campaign_last_name">Last Name</label>
-    <?php echo Form::input('last_name','',array('id' => 'last_name') ?>
+    <?php echo Form::input('last_name','',array('id' => 'last_name')) ?>
   </div>
 
   <div class="field">
     <label for="campaign_campaign_name">Campaign Name</label>
-    <?php echo Form::input('campaign_name','',array('id' => 'campaign_name') ?>
+    <?php echo Form::input('campaign_name','',array('id' => 'campaign_name')) ?>
   </div>
 
   <div class="field">
     <label for="campaign_description">Campaign Descripion</label>
-    <?php echo Form::input('description',$user['campaign_description'],array('id' => 'description') ?>
+    <?php echo Form::input('description','' ,array('id' => 'description')) ?>
   </div>
 
     <div id="registration_wrap" class="field" >
