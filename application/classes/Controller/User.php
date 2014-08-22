@@ -56,7 +56,11 @@ class Controller_User extends Controller_Base {
 					$this->template->content->wepay = '';
 					$this->template->content->checkouts = Controller_Wepayapi::get_checkouts($campaign);
 				}
-			} else {
+			}
+			else if (if ($user->login_role == 'admin') {
+				$this->template->content->edit = true;
+			}
+			else {
 				$this->template->content->edit = false;
 				if ($campaign->hasAccountId()) {
 					$this->template->content->wepay = "<a href=" . URL::base() . "user/create_credit_card/".$id." class='btn btn-danger btn-large' id='buy-now-button'>Donate to ".$campaign->campaign_name." Now!</a>";
