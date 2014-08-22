@@ -25,6 +25,7 @@ class Controller_User extends Controller_Base {
 			$this->template->content->price = number_format($campaign->price,2);
 			$this->template->content->edit = true;
 			$this->template->content->wepay_link = 'https://stage.wepay.com/account/' . $campaign->wepay_account_id;
+			$this->template->content->account_id = Request::current()->param('id');
 
 		}
 		else {
