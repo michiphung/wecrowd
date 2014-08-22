@@ -96,14 +96,14 @@
     intro.setOptions({
       steps: [
         {
-          element: "#step10",
+          //element: "#step10",
           intro: "Let's donate to Michelle's campaign!"
         }
       ],
       showStepNumbers: false
     })
     intro.start().oncomplete(function() {
-    	window.location.href= <?echo $base?> + "/user/create_credit_card/15?demo=true"
+    	window.location.href= <?echo $base?> + "user/create_credit_card/15?demo=true"
     });
   }
 </script>
