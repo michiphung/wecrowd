@@ -104,7 +104,7 @@
       showStepNumbers: false
     })
     intro.start().oncomplete(function() {
-    	window.location= <?$base?> + "user/create_credit_card/15?demo=true"
+    	window.location= <?echo $base?> + "user/create_credit_card/15?demo=true"
     });
   }
 </script>
