@@ -88,8 +88,14 @@ class Controller_User extends Controller_Base {
 		$this->template->content->wepay_link = 'https://stage.wepay.com/account/' . $campaign->wepay_account_id;
 	}
 
-	public function action_acount_summary() {
-
+	public function action_account_summary() {
+		if (Auth::instance()->logged_in()){
+			$user = Auth::instance()->get_user();
+			$campaign = ORM::factory('campaign')->where('email', '=', $user->email)->find();
+			HTTP::redirect(URL::base() . 'user/account/' . $campaign->id);
+		} else {
+			$this->template->content = "Not logged in!";
+		}
 	}
 
 	public function action_create_credit_card(){
