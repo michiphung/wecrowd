@@ -166,6 +166,7 @@ class Controller_User extends Controller_Base {
 		$this->template->content->price = number_format($campaign->price,2);
 		$this->template->content->base = URL::base($this->request);
 		$this->template->content->wepay_link = 'https://stage.wepay.com/account/' . $campaign->wepay_account_id;
+		$this->template->content->account_id = Request::current()->param('id');
 	}
 
 	public function action_account_summary() {
@@ -366,11 +367,18 @@ class Controller_User extends Controller_Base {
 			$this->template->content = "Delete? Really?";
 			$user = Auth::instance()->get_user();
 			$campaign = ORM::factory('campaign')->where('email', '=', $user->email)->find();
-
-		    Auth::instance()->logout();
-            $campaign->delete();
-            $user->delete();
-		    HTTP::redirect('/');	
+			if (!($user->login_role == 'admin')) {
+			    Auth::instance()->logout();
+	            $campaign->delete();
+	            $user->delete();
+			    HTTP::redirect('/');
+			} else {
+				$campaign = ORM::factory('campaign')->where('id', '=', $_GET['account_id'])->find();
+				$campaign->delete();
+				$user = ORM::factory('user')->where('email', '=', $campaign->email)->find();
+				$user->delete();
+				HTTP::redirect('/');
+			}
 		}
 		else{
 			$this->template->content = "Error, you're not logged in!";

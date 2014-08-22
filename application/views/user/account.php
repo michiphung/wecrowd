@@ -31,7 +31,7 @@
 		</p>
 		<p><p>
 	<? if ($edit) {
-	    echo "<a id=\"delete\" href=" . URL::base() . 'user/delete>Delete</a>';
+	    echo "<a id=\"delete\" href=" . URL::base() . 'user/delete?account_id=' . $account_id'>Delete</a>';
 	    echo "<br>";
 	    echo "<br>";
 	    echo "<h1>Checkouts</h1>";
