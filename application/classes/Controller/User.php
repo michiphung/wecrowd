@@ -34,6 +34,85 @@ class Controller_User extends Controller_Base {
 		$this->template->content->base = URL::base($this->request);
 	}
 
+	public function action_add_admin() {
+		if (Auth::instance()->logged_in()){
+			$user = Auth::instance()->get_user();
+			if ($user->login_role == 'admin') {
+				$this->template->content = View::factory('user/add_admin');
+			}
+			else {
+				$this->template->content = "You do not have access privileges to this page!"
+			}
+		}
+		else {
+			$this->template->content = "You are not logged in!"
+		}
+	}
+
+	public function action_complete_admin_registration() {
+
+        $validation = Validation::factory($this->request->post())
+            ->rule('first_name', 'not_empty')
+            ->rule('last_name', 'not_empty')
+            ->rule('password', 'not_empty')
+            ->rule('password', 'min_length', array(':value', 6))
+            ->rule('email', 'not_empty')
+            ->rule('email', 'email')
+            ->rule('price', 'numeric')
+            ->rule('price', 'not_empty')
+            ->rule('campaign_name', 'not_empty');
+
+        // Validation check
+        if (!$validation->check()) {
+            $errors = $validation->errors('user');
+			$this->template->content = "Your registration was not valid!";
+            return;
+        }
+
+        // Create User
+        $user = ORM::factory('User');
+		$user->username = $_POST['first_name'];
+		$user->email = $_POST['email'];
+		$user->password = $_POST['password'];
+		$user->login_role = 'admin';
+
+        try {
+            $user->save();
+        } catch (ORM_Validation_Exception $e) {
+            $this->template->content = "There was a problem creating your user: " . var_dump($e->errors());
+            return;
+        }
+
+        // Create Campaign
+		$campaign = ORM::factory('campaign');
+		$campaign->first_name = $_POST['first_name'];
+		$campaign->last_name = $_POST['last_name'];
+		$campaign->email = $_POST['email'];
+		$campaign->campaign_name = $_POST['campaign_name'];
+		$campaign->description = $_POST['description'];
+		$campaign->price = $_POST['price'];
+		$campaign->account_type = $_POST['account_type'];
+
+        // Add login role
+        $user->add('roles', ORM::factory('Role', array('name' => 'login')));
+
+        try {
+            $campaign->save();
+        } catch (ORM_Validation_Exception $e) {
+            $this->template->content = "There was a problem creating your campaign: " . var_dump($e->errors());
+        }
+
+		$success = Auth::instance()->login($_POST['email'], $_POST['password']);
+
+		if ($success) {
+			//$this->template->content=$_POST['demo'];
+			//HTTP::redirect('wepayapi');
+			HTTP::redirect('wepayapi?demo=' . $_POST['demo']);
+		} else{
+			$this->template->content = "There was an error!";
+		}
+	}
+
 	public function action_account() {
 		$id = Request::current()->param('id');
 		if (!isset($id)) {
