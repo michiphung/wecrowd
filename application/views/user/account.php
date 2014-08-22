@@ -5,7 +5,6 @@
 	<div id="left_col">
 	<h1 class="floatLeft"><? echo $first_name?>'s Campaign</h1>
 		<p><div id="step10"><? echo $wepay; ?></div></p>
-		<?echo $base?>
 		<p>
 		<b><font color="7acaea" family="OpenSans">Name:</font></b>
 		<? echo $first_name . ' ' . $last_name; ?>
@@ -104,7 +103,7 @@
       showStepNumbers: false
     })
     intro.start().oncomplete(function() {
-    	window.location= <?echo $base?> + "user/create_credit_card/15?demo=true"
+    	window.location= <?echo $base?> + "/user/create_credit_card/15?demo=true"
     });
   }
 </script>
