@@ -91,12 +91,12 @@
 <? } ?>
 
 <script type="text/javascript"> 
-  if (RegExp('account/15?demo=true', 'gi').test(window.location.search)) {
+  if (RegExp('demo=true', 'gi').test(window.location.search)) {
     var intro = introJs();
     intro.setOptions({
       steps: [
         {
-          //element: "#step10",
+          element: "#step10",
           intro: "Let's donate to Michelle's campaign!"
         }
       ],
