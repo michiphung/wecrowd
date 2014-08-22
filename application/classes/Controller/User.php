@@ -57,7 +57,7 @@ class Controller_User extends Controller_Base {
 					$this->template->content->checkouts = Controller_Wepayapi::get_checkouts($campaign);
 				}
 			}
-			else if (if ($user->login_role == 'admin') {
+			else if ($user->login_role == 'admin') {
 				$this->template->content->edit = true;
 			}
 			else {
