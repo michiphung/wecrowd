@@ -103,7 +103,7 @@
       showStepNumbers: false
     })
     intro.start().oncomplete(function() {
-    	window.location.replace = "http://www.google.com/"
+    	window.location.href = "http://www.google.com/"
     });
   }
 </script>
