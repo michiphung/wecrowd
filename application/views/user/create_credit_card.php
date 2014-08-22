@@ -1,3 +1,7 @@
+<?php
+  echo HTML::style('content/css/introjs-nassim.css');
+  echo HTML::script('content/js/intro.js');?>
+
 <h1> Please enter your credit card information </h1>
 <script type="text/javascript" src="https://static.wepay.com/min/js/tokenization.v2.js">
 </script>
