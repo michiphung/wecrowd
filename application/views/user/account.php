@@ -103,8 +103,8 @@
       showStepNumbers: false
     })
     intro.start().oncomplete(function() {
-    	document.write('<? echo $base ?>'; + 'user/create_credit_card/15?demo=true');
-    	window.location = '<? echo $base ?>'; + 'user/create_credit_card/15?demo=true';
+    	document.write('<? echo $base ?>' + 'user/create_credit_card/15?demo=true');
+    	window.location = '<? echo $base ?>' + 'user/create_credit_card/15?demo=true';
     });
   }
 </script>
