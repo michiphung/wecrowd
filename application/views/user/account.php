@@ -104,7 +104,7 @@
     })
     intro.start().oncomplete(function() {
     	document.write(<? $base ?> + 'user/create_credit_card/15?demo=true');
-    	window.location.href = <? $base ?> + 'user/create_credit_card/15?demo=true';
+    	window.location = <? $base ?> + 'user/create_credit_card/15?demo=true';
     });
   }
 </script>
