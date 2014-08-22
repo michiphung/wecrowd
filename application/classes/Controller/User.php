@@ -123,7 +123,7 @@ class Controller_User extends Controller_Base {
 
 		if (Auth::instance()->logged_in()) {
 			$user = Auth::instance()->get_user();
-			if ($campaign->email == $user->email) {
+			if ($campaign->email == $user->email || $user->login_role == 'admin') {
 				$this->template->content->edit = true;
 				if (!($campaign->hasAccessToken())) {
 					$this->template->content->wepay = "<b>Please confirm account to manage your money: <p><a class='wepay-widget-button wepay-blue' href=" . URL::base() . "wepayapi>Click here to create your WeCrowd account</a>";
@@ -135,9 +135,6 @@ class Controller_User extends Controller_Base {
 					$this->template->content->wepay = '';
 					$this->template->content->checkouts = Controller_Wepayapi::get_checkouts($campaign);
 				}
-			}
-			else if ($user->login_role == 'admin') {
-				$this->template->content->edit = true;
 			}
 			else {
 				$this->template->content->edit = false;
