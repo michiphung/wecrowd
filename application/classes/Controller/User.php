@@ -41,11 +41,11 @@ class Controller_User extends Controller_Base {
 				$this->template->content = View::factory('user/add_admin');
 			}
 			else {
-				$this->template->content = "You do not have access privileges to this page!"
+				$this->template->content = "You do not have access privileges to this page!";
 			}
 		}
 		else {
-			$this->template->content = "You are not logged in!"
+			$this->template->content = "You are not logged in!";
 		}
 	}
 
