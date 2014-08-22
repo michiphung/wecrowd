@@ -59,7 +59,7 @@ function chargeCard(){
         {
           element: "#step11",
           intro: "We already have everything prefilled for you!"
-        }
+        },
         {
           element: "#step12",
           intro: "After submitting your credit card information, '/credit_card/create' is called. This gives you a credit_card_id which can be used to pass in your '/checkout/create'. This is similiar to how preapproval ids work."
